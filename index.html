@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miami Auto Parts Depot LLC – Repuestos Usados en Opa Locka, FL | miamiautopartsdepot.com</title>
+  <meta name="description" content="Miami Auto Parts Depot LLC – La mejor selección de repuestos usados para autos en Opa Locka, Florida. 13105 Cairo Lane, Opa Locka FL 33054. Calidad garantizada al mejor precio. ¡Contáctanos por WhatsApp!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --red: #e63012;
+      --red-dark: #b82209;
+      --red-glow: rgba(230, 48, 18, 0.35);
+      --yellow: #f5a623;
+      --dark: #0a0a0a;
+      --dark2: #111111;
+      --dark3: #1a1a1a;
+      --gray: #2a2a2a;
+      --light: #f0f0f0;
+      --muted: #888;
+      --whatsapp: #25d366;
+      --whatsapp-dark: #1da851;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(230,48,18,0.3);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      transition: all 0.3s;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: var(--red);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 18px var(--red-glow);
+    }
+    .logo-text {
+      display: flex; flex-direction: column;
+      line-height: 1.1;
+    }
+    .logo-text span:first-child {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .logo-text span:last-child {
+      font-size: 10px;
+      color: var(--red);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-cta {
+      background: var(--whatsapp);
+      color: #fff !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      font-size: 13px !important;
+      display: flex; align-items: center; gap: 7px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s !important;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    }
+    .nav-cta:hover {
+      background: var(--whatsapp-dark) !important;
+      transform: scale(1.04);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5) !important;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 26px; height: 2px;
+      background: #fff; border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('hero-engine.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.28) saturate(0.8);
+      transform: scale(1.05);
+      animation: heroZoom 12s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1.12); }
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(180,20,0,0.15) 50%, rgba(10,10,10,0.9) 100%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(230,48,18,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,48,18,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(230,48,18,0.15);
+      border: 1px solid rgba(230,48,18,0.4);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+    .hero-badge .dot {
+      width: 7px; height: 7px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: 0.95;
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .hero-title .highlight {
+      color: var(--red);
+      text-shadow: 0 0 40px var(--red-glow);
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 2vw, 20px);
+      color: #bbb;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 500px;
+    }
+    .hero-subtitle strong { color: var(--yellow); }
+    .hero-buttons {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      transition: all 0.25s;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 8px 48px rgba(37,211,102,0.7), 0 0 0 8px rgba(37,211,102,0.1); }
+    }
+    .btn-whatsapp:hover {
+      background: var(--whatsapp-dark);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(37,211,102,0.6);
+      animation: none;
+    }
+    .btn-whatsapp i { font-size: 22px; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      border: 2px solid rgba(255,255,255,0.25);
+      transition: all 0.25s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-2px);
+    }
+    .hero-stats {
+      display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .stat {
+      display: flex; flex-direction: column;
+    }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      color: var(--red);
+      line-height: 1;
+      text-shadow: 0 0 20px var(--red-glow);
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 36px;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--yellow));
+    }
+    .hero-card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .parts-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .parts-list li {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px;
+      color: #ccc;
+      font-weight: 500;
+    }
+    .parts-list li i {
+      color: var(--red);
+      font-size: 12px;
+      width: 16px;
+    }
+    .card-cta {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 800;
+      justify-content: center;
+      transition: all 0.25s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    }
+    .card-cta:hover {
+      background: var(--whatsapp-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.5);
+    }
+
+    /* ===== MARQUEE STRIP ===== */
+    .marquee-strip {
+      background: var(--red);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-inner {
+      display: inline-flex;
+      animation: marquee 22s linear infinite;
+      gap: 0;
+    }
+    .marquee-inner span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: #fff;
+      padding: 0 30px;
+    }
+    .marquee-inner .sep {
+      color: rgba(255,255,255,0.5);
+      padding: 0 10px;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 90px 5%; }
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(38px, 5vw, 58px);
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 16px;
+      color: #888;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .section-header { margin-bottom: 56px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    /* ===== WHY US ===== */
+    #why {
+      background: var(--dark2);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .why-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .why-card:hover { transform: translateY(-6px); border-color: rgba(230,48,18,0.3); }
+    .why-card:hover::after { transform: scaleX(1); }
+    .why-icon {
+      width: 56px; height: 56px;
+      background: rgba(230,48,18,0.12);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      color: var(--red);
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+    .why-card:hover .why-icon { background: rgba(230,48,18,0.22); }
+    .why-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .why-card p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    /* ===== CATEGORIES ===== */
+    #categories { background: var(--dark); }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    .cat-item {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .cat-item:hover {
+      background: rgba(230,48,18,0.1);
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+    .cat-item i {
+      font-size: 32px;
+      color: var(--red);
+      margin-bottom: 12px;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .cat-item:hover i { transform: scale(1.15); }
+    .cat-item span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ccc;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    #how { background: var(--dark2); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px;
+      position: relative;
+    }
+    .step {
+      text-align: center;
+      padding: 32px 24px;
+      position: relative;
+    }
+    .step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 72px;
+      color: rgba(230,48,18,0.12);
+      line-height: 1;
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      user-select: none;
+    }
+    .step-icon {
+      width: 72px; height: 72px;
+      background: rgba(230,48,18,0.1);
+      border: 2px solid rgba(230,48,18,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      color: var(--red);
+      margin: 0 auto 20px;
+      position: relative; z-index: 1;
+      transition: all 0.3s;
+    }
+    .step:hover .step-icon {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+      box-shadow: 0 0 30px var(--red-glow);
+    }
+    .step h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .step p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials { background: var(--dark); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .testi-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s;
+    }
+    .testi-card:hover { transform: translateY(-4px); border-color: rgba(230,48,18,0.25); }
+    .stars { color: var(--yellow); font-size: 16px; margin-bottom: 14px; }
+    .testi-text {
+      font-size: 15px;
+      color: #bbb;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testi-author {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .author-info strong { display: block; font-size: 14px; color: #fff; font-weight: 700; }
+    .author-info span { font-size: 12px; color: #666; }
+
+    /* ===== CTA SECTION ===== */
+    #cta {
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a0505 50%, #0f0f0f 100%);
+      text-align: center;
+      padding: 100px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(230,48,18,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230,48,18,0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .cta-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(230,48,18,0.15) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 6vw, 72px);
+      color: #fff;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+    .cta-title .red { color: var(--red); }
+    .cta-sub {
+      font-size: 18px;
+      color: #999;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    .cta-btn-big {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      padding: 20px 48px;
+      border-radius: 50px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      transition: all 0.25s;
+      box-shadow: 0 12px 48px rgba(37,211,102,0.4);
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+    .cta-btn-big:hover {
+      background: var(--whatsapp-dark);
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 20px 60px rgba(37,211,102,0.6);
+      animation: none;
+    }
+    .cta-btn-big i { font-size: 26px; }
+    .cta-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #555;
+    }
+    .cta-note i { color: var(--whatsapp); margin-right: 5px; }
+
+    /* ===== LOCATION ===== */
+    #location { background: var(--dark2); }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .location-info h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      color: #fff;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+    .info-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 20px;
+    }
+    .info-icon {
+      width: 44px; height: 44px;
+      background: rgba(230,48,18,0.12);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--red);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .info-text strong { display: block; font-size: 14px; color: #fff; font-weight: 700; margin-bottom: 3px; }
+    .info-text span { font-size: 14px; color: #888; }
+    .map-container {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      height: 340px;
+      background: var(--dark3);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .map-container iframe {
+      width: 100%; height: 100%;
+      border: none;
+      filter: grayscale(80%) invert(90%) hue-rotate(180deg);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 48px 5% 28px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+    .footer-brand p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 14px;
+      color: #666;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--red); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: #444; }
+    .footer-bottom a { color: var(--red); text-decoration: none; }
+    .social-links { display: flex; gap: 12px; }
+    .social-links a {
+      width: 36px; height: 36px;
+      background: var(--dark3);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #666;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-links a:hover { background: var(--red); color: #fff; }
+
+    /* ===== FLOATING WA BUTTON ===== */
+    .float-wa {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 9999;
+      background: var(--whatsapp);
+      color: #fff;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+      transition: all 0.25s;
+      animation: floatPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes floatPulse {
+      0%, 100% { box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 6px 28px rgba(37,211,102,0.5), 0 0 0 14px rgba(37,211,102,0.1); }
+    }
+    .float-wa:hover {
+      background: var(--whatsapp-dark);
+      transform: scale(1.12);
+      animation: none;
+      box-shadow: 0 10px 40px rgba(37,211,102,0.7);
+    }
+    .float-wa-tooltip {
+      position: absolute;
+      right: 76px;
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      border: 1px solid rgba(37,211,102,0.3);
+    }
+    .float-wa:hover .float-wa-tooltip { opacity: 1; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-card { display: none; }
+      .location-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-buttons { flex-direction: column; }
+      .btn-whatsapp, .btn-secondary { justify-content: center; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: rgba(10,10,10,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(230,48,18,0.3);
+      padding: 20px 5%;
+      z-index: 999;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--red); }
+    .mobile-menu .wa-link {
+      background: var(--whatsapp);
+      color: #fff !important;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-align: center;
+      border: none;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <div class="logo-icon">🔧</div>
+      <div class="logo-text">
+        <span>Miami Auto Parts Depot LLC</span>
+        <span>Opa Locka, Florida</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Por Qué Elegirnos</a></li>
+      <li><a href="#categories">Repuestos</a></li>
+      <li><a href="#how">Cómo Funciona</a></li>
+      <li><a href="#testimonials">Opiniones</a></li>
+      <li><a href="#location">Ubicación</a></li>
+      <li>
+        <a href="https://wa.me/18092678567?text=Hola%2C%20necesito%20un%20repuesto%20para%20mi%20auto." class="nav-cta" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why" onclick="toggleMenu()">Por Qué Elegirnos</a>
+    <a href="#categories" onclick="toggleMenu()">Repuestos</a>
+    <a href="#how" onclick="toggleMenu()">Cómo Funciona</a>
+    <a href="#testimonials" onclick="toggleMenu()">Opiniones</a>
+    <a href="#location" onclick="toggleMenu()">Ubicación</a>
+    <a href="https://wa.me/18092678567?text=Hola%2C%20necesito%20un%20repuesto%20para%20mi%20auto." class="wa-link" target="_blank">
+      <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Abierto Ahora · Opa Locka, FL
+        </div>
+        <h1 class="hero-title">
+          REPUESTOS<br/>
+          USADOS<br/>
+          <span class="highlight">AL MEJOR<br/>PRECIO</span>
+        </h1>
+        <p class="hero-subtitle">
+          En <strong>Miami Auto Parts Depot LLC</strong> encontrarás el repuesto que necesitas para tu auto, al precio justo. <strong>Miles de piezas disponibles</strong>, calidad garantizada y atención inmediata por WhatsApp.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/18092678567?text=Hola%2C%20necesito%20un%20repuesto%20para%20mi%20auto." class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Cotiza Ahora por WhatsApp
+          </a>
+          <a href="#categories" class="btn-secondary">
+            <i class="fas fa-th-large"></i>
+            Ver Repuestos
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">10K+</span>
+            <span class="stat-label">Piezas en Stock</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">15+</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">98%</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card reveal">
+        <h3 class="hero-card-title">¿Qué Repuesto Necesitas?</h3>
+        <ul class="parts-list">
+          <li><i class="fas fa-check-circle"></i> Motores</li>
+          <li><i class="fas fa-check-circle"></i> Transmisiones</li>
+          <li><i class="fas fa-check-circle"></i> Alternadores</li>
+          <li><i class="fas fa-check-circle"></i> Radiadores</li>
+          <li><i class="fas fa-check-circle"></i> Puertas & Paneles</li>
+          <li><i class="fas fa-check-circle"></i> Faros & Luces</li>
+          <li><i class="fas fa-check-circle"></i> Suspensión</li>
+          <li><i class="fas fa-check-circle"></i> Frenos</li>
+          <li><i class="fas fa-check-circle"></i> A/C & Calefacción</li>
+          <li><i class="fas fa-check-circle"></i> Ejes & Diferenciales</li>
+          <li><i class="fas fa-check-circle"></i> Cajas de Dirección</li>
+          <li><i class="fas fa-check-circle"></i> Y mucho más...</li>
+        </ul>
+        <a href="https://wa.me/18092678567?text=Hola%2C%20necesito%20un%20repuesto%20para%20mi%20auto." class="card-cta" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          Consultar Disponibilidad
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>MOTORES</span><span class="sep">✦</span>
+      <span>TRANSMISIONES</span><span class="sep">✦</span>
+      <span>ALTERNADORES</span><span class="sep">✦</span>
+      <span>RADIADORES</span><span class="sep">✦</span>
+      <span>PUERTAS</span><span class="sep">✦</span>
+      <span>SUSPENSIÓN</span><span class="sep">✦</span>
+      <span>FRENOS</span><span class="sep">✦</span>
+      <span>A/C</span><span class="sep">✦</span>
+      <span>EJES</span><span class="sep">✦</span>
+      <span>FAROS</span><span class="sep">✦</span>
+      <span>DIRECCIÓN</span><span class="sep">✦</span>
+      <span>CATALIZADORES</span><span class="sep">✦</span>
+      <!-- Duplicate for seamless loop -->
+      <span>MOTORES</span><span class="sep">✦</span>
+      <span>TRANSMISIONES</span><span class="sep">✦</span>
+      <span>ALTERNADORES</span><span class="sep">✦</span>
+      <span>RADIADORES</span><span class="sep">✦</span>
+      <span>PUERTAS</span><span class="sep">✦</span>
+      <span>SUSPENSIÓN</span><span class="sep">✦</span>
+      <span>FRENOS</span><span class="sep">✦</span>
+      <span>A/C</span><span class="sep">✦</span>
+      <span>EJES</span><span class="sep">✦</span>
+      <span>FAROS</span><span class="sep">✦</span>
+      <span>DIRECCIÓN</span><span class="sep">✦</span>
+      <span>CATALIZADORES</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Por Qué Elegirnos</span>
+        <h2 class="section-title">LA DIFERENCIA<br/>MIAMI AUTO PARTS</h2>
+        <p class="section-sub">Somos el destino #1 de repuestos usados en Miami. Calidad, precio y velocidad en un solo lugar.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-dollar-sign"></i></div>
+          <h3>Precios Imbatibles</h3>
+          <p>Ahorra hasta un 70% comparado con repuestos nuevos. Calidad garantizada al precio más bajo del mercado en Miami.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-warehouse"></i></div>
+          <h3>Enorme Inventario</h3>
+          <p>Más de 10,000 piezas en stock para todas las marcas y modelos. Si no lo tenemos, lo conseguimos para ti.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Calidad Garantizada</h3>
+          <p>Cada pieza es inspeccionada y probada antes de la venta. Te damos garantía en todos nuestros repuestos.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>Atención Inmediata</h3>
+          <p>Respuesta rápida por WhatsApp. Envíanos el año, marca y modelo de tu auto y te cotizamos al instante.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h3>Envío Disponible</h3>
+          <p>Enviamos a todo Miami-Dade, Broward y más allá. Recoge en tienda o recíbelo en tu puerta.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fas fa-star"></i></div>
+          <h3>15+ Años de Experiencia</h3>
+          <p>Más de una década sirviendo a la comunidad de Miami. Miles de clientes satisfechos nos respaldan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Nuestro Inventario</span>
+        <h2 class="section-title">REPUESTOS PARA<br/>TODAS LAS MARCAS</h2>
+        <p class="section-sub">Toyota, Honda, Ford, Chevrolet, BMW, Mercedes, Dodge, Nissan, Hyundai y muchas más. ¡Pregunta por WhatsApp!</p>
+      </div>
+      <div class="cat-grid">
+        <a href="https://wa.me/18092678567?text=Necesito%20un%20motor%20usado." class="cat-item reveal" target="_blank">
+          <i class="fas fa-cog"></i>
+          <span>Motores</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20una%20transmisi%C3%B3n%20usada." class="cat-item reveal" target="_blank">
+          <i class="fas fa-sliders-h"></i>
+          <span>Transmisiones</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20un%20alternador%20usado." class="cat-item reveal" target="_blank">
+          <i class="fas fa-bolt"></i>
+          <span>Alternadores</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20un%20radiador%20usado." class="cat-item reveal" target="_blank">
+          <i class="fas fa-thermometer-half"></i>
+          <span>Radiadores</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20puertas%20o%20paneles%20de%20carrocer%C3%ADa." class="cat-item reveal" target="_blank">
+          <i class="fas fa-car-side"></i>
+          <span>Carrocería</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20faros%20o%20luces%20para%20mi%20auto." class="cat-item reveal" target="_blank">
+          <i class="fas fa-lightbulb"></i>
+          <span>Faros & Luces</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20repuestos%20de%20suspensi%C3%B3n." class="cat-item reveal" target="_blank">
+          <i class="fas fa-circle-notch"></i>
+          <span>Suspensión</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20repuestos%20de%20frenos." class="cat-item reveal" target="_blank">
+          <i class="fas fa-stop-circle"></i>
+          <span>Frenos</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20repuestos%20de%20A%2FC%20o%20calefacci%C3%B3n." class="cat-item reveal" target="_blank">
+          <i class="fas fa-snowflake"></i>
+          <span>A/C & Calefacción</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20un%20eje%20o%20diferencial." class="cat-item reveal" target="_blank">
+          <i class="fas fa-tools"></i>
+          <span>Ejes & Diferenciales</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20una%20caja%20de%20direcci%C3%B3n." class="cat-item reveal" target="_blank">
+          <i class="fas fa-steering-wheel"></i>
+          <span>Dirección</span>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito%20un%20repuesto%20para%20mi%20auto." class="cat-item reveal" target="_blank">
+          <i class="fas fa-ellipsis-h"></i>
+          <span>Y Mucho Más</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-label">Proceso Simple</span>
+        <h2 class="section-title">¿CÓMO FUNCIONA?</h2>
+        <p class="section-sub" style="margin:0 auto;">Conseguir tu repuesto es más fácil de lo que crees. Solo 3 pasos.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>Escríbenos por WhatsApp</h3>
+          <p>Envíanos el año, marca, modelo y el repuesto que necesitas. Respondemos en minutos.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <div class="step-icon"><i class="fas fa-search"></i></div>
+          <h3>Verificamos el Inventario</h3>
+          <p>Buscamos la pieza exacta en nuestro inventario y te enviamos fotos y precio al instante.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <div class="step-icon"><i class="fas fa-handshake"></i></div>
+          <h3>Recoge o Recíbelo</h3>
+          <p>Pasa por nuestra tienda en Opa Locka, FL o coordinamos el envío. ¡Así de simple!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Lo Que Dicen Nuestros Clientes</span>
+        <h2 class="section-title">MILES DE CLIENTES<br/>SATISFECHOS</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Encontré el motor para mi Toyota Camry 2015 en menos de 24 horas. El precio fue increíble, casi la mitad de lo que me cotizaron en otros lugares. ¡100% recomendado!"</p>
+          <div class="testi-author">
+            <div class="avatar">CR</div>
+            <div class="author-info">
+              <strong>Carlos R.</strong>
+              <span>Miami, FL · Toyota Camry</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Me atendieron súper rápido por WhatsApp. Necesitaba una transmisión para mi Honda Accord y la tenían disponible. El servicio fue excelente de principio a fin."</p>
+          <div class="testi-author">
+            <div class="avatar">ML</div>
+            <div class="author-info">
+              <strong>María L.</strong>
+              <span>Hialeah, FL · Honda Accord</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Llevo 5 años comprando aquí mis repuestos. Siempre tienen lo que busco, los precios son justos y la atención es de primera. El mejor lugar de repuestos en Miami."</p>
+          <div class="testi-author">
+            <div class="avatar">JP</div>
+            <div class="author-info">
+              <strong>José P.</strong>
+              <span>Doral, FL · Ford F-150</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="cta">
+    <div class="cta-glow"></div>
+    <div class="cta-content">
+      <span class="section-label">Contáctanos Ahora</span>
+      <h2 class="cta-title">¿LISTO PARA ENCONTRAR<br/>TU <span class="red">REPUESTO?</span></h2>
+      <p class="cta-sub">No pierdas más tiempo buscando. Escríbenos ahora y te respondemos al instante con disponibilidad y precio.</p>
+      <a href="https://wa.me/18092678567?text=Hola%2C%20necesito%20un%20repuesto%20para%20mi%20auto.%20%C2%BFTienen%20disponibilidad%3F" class="cta-btn-big" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        Escribir por WhatsApp Ahora
+      </a>
+      <p class="cta-note"><i class="fas fa-clock"></i> Respondemos en minutos · Lunes a Sábado 8am–6pm</p>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info reveal">
+          <span class="section-label">Encuéntranos</span>
+          <h3>VISÍTANOS EN OPA LOCKA</h3>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="info-text">
+              <strong>Dirección</strong>
+              <span>13105 Cairo Lane, Opa Locka, FL 33054</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="info-text">
+              <strong>WhatsApp</strong>
+              <span>+1 (809) 267-8567</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-clock"></i></div>
+            <div class="info-text">
+              <strong>Horario</strong>
+              <span>Lunes – Sábado: 8:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-globe"></i></div>
+            <div class="info-text">
+              <strong>Sitio Web</strong>
+              <span><a href="https://miamiautopartsdepot.com" target="_blank" style="color:#e63012;">miamiautopartsdepot.com</a></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fas fa-language"></i></div>
+            <div class="info-text">
+              <strong>Idiomas</strong>
+              <span>Español & English</span>
+            </div>
+          </div>
+          <a href="https://wa.me/18092678567?text=Hola%2C%20quiero%20visitar%20su%20tienda%20en%20Opa%20Locka." class="btn-whatsapp" style="margin-top:24px; display:inline-flex;" target="_blank">
+            <i class="fab fa-whatsapp"></i> Cómo Llegar por WhatsApp
+          </a>
+        </div>
+        <div class="map-container reveal">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.8!2d-80.2782!3d25.9028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6f5e5e5e5e5%3A0x0!2s13105%20Cairo%20Ln%2C%20Opa-locka%2C%20FL%2033054!5e0!3m2!1sen!2sus!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Miami Auto Parts Depot Location">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" style="display:inline-flex;">
+            <div class="logo-icon">🔧</div>
+            <div class="logo-text">
+               <span>Miami Auto Parts Depot LLC</span>
+          <span>Opa Locka, Florida</span>
+        </div>
+      </a>
+      <p>Tu fuente confiableuente confiable de repuestos usados de calidad en Miami, Florida. Más de 15 años sirviendo a la comunidad con los mejores precios y servicio.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Repuestos</h4>
+          <ul>
+            <li><a href="#">Motores</a></li>
+            <li><a href="#">Transmisiones</a></li>
+            <li><a href="#">Alternadores</a></li>
+            <li><a href="#">Radiadores</a></li>
+            <li><a href="#">Carrocería</a></li>
+            <li><a href="#">Suspensión</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="https://wa.me/18092678567" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+            <li><a href="#location">Ubicación</a></li>
+            <li><a href="#how">Cómo Funciona</a></li>
+            <li><a href="#testimonials">Opiniones</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Miami Auto Parts Depot LLC · Opa Locka, Florida · <a href="https://miamiautopartsdepot.com" target="_blank">miamiautopartsdepot.com</a> · All rights reserved</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61586469360382" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/maautopartsdepot" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@miamiautopartsdep" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/18092678567" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/18092678567?text=Hola%2C%20necesito%20un%20repuesto%20para%20mi%20auto.%20%C2%BFTienen%20disponibilidad%3F" class="float-wa" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="float-wa-tooltip">¡Escríbenos ahora!</span>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(5,5,5,0.98)';
+        nav.style.borderBottomColor = 'rgba(230,48,18,0.5)';
+      } else {
+        nav.style.background = 'rgba(10,10,10,0.92)';
+        nav.style.borderBottomColor = 'rgba(230,48,18,0.3)';
+      }
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Staggered reveal for grids
+    document.querySelectorAll('.why-grid .why-card, .cat-grid .cat-item, .testi-grid .testi-card').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.07}s`;
+    });
+
+    // Smooth close mobile menu on nav link click
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
