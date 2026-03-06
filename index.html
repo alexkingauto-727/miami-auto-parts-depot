@@ -1252,6 +1252,159 @@
     @media (max-width: 600px) {
       .branches-grid { grid-template-columns: 1fr; }
     }
+
+    /* ===== HERO PHOTO STACK ===== */
+    .hero-photo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-photo-main {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(230,48,18,0.3);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .hero-photo-main img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .hero-photo-main:hover img { transform: scale(1.04); }
+    .photo-badge-overlay {
+      position: absolute;
+      bottom: 12px; left: 12px;
+      background: rgba(230,48,18,0.9);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: flex; align-items: center; gap: 6px;
+      letter-spacing: 0.5px;
+    }
+    .hero-photo-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .hero-photo-thumb {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-photo-thumb img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .hero-photo-thumb:hover img { transform: scale(1.08); }
+    .hero-photo-thumb span {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      text-align: center;
+      padding: 8px 4px 5px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      transition: all 0.25s;
+      margin-top: 4px;
+    }
+    .card-cta:hover {
+      background: #1da851;
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+    }
+
+    /* ===== PHOTO GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 220px;
+      gap: 14px;
+      margin-top: 48px;
+    }
+    .gallery-large {
+      grid-column: span 2;
+    }
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.88));
+      padding: 40px 16px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+    .gallery-caption i { color: var(--red); font-size: 14px; }
+    .gallery-caption span {
+      flex: 1;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .gallery-caption a {
+      background: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      display: flex; align-items: center; gap: 5px;
+      transition: background 0.2s;
+    }
+    .gallery-caption a:hover { background: #1da851; }
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+      .gallery-large { grid-column: span 2; }
+      .hero-photo-stack { display: none; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
+      .gallery-large { grid-column: span 1; }
+    }
   </style>
 </head>
 <body>
@@ -1340,23 +1493,26 @@
           </div>
         </div>
       </div>
-      <div class="hero-card reveal">
-        <h3 class="hero-card-title">¿Qué Repuesto Necesitas?</h3>
-        <ul class="parts-list">
-          <li><i class="fas fa-check-circle"></i> Motores</li>
-          <li><i class="fas fa-check-circle"></i> Transmisiones</li>
-          <li><i class="fas fa-check-circle"></i> Alternadores</li>
-          <li><i class="fas fa-check-circle"></i> Radiadores</li>
-          <li><i class="fas fa-check-circle"></i> Puertas & Paneles</li>
-          <li><i class="fas fa-check-circle"></i> Faros & Luces</li>
-          <li><i class="fas fa-check-circle"></i> Suspensión</li>
-          <li><i class="fas fa-check-circle"></i> Frenos</li>
-          <li><i class="fas fa-check-circle"></i> A/C & Calefacción</li>
-          <li><i class="fas fa-check-circle"></i> Ejes & Diferenciales</li>
-          <li><i class="fas fa-check-circle"></i> Cajas de Dirección</li>
-          <li><i class="fas fa-check-circle"></i> Y mucho más...</li>
-        </ul>
-        <a href="https://wa.link/4526eu" class="card-cta" target="_blank">
+      <div class="hero-photo-stack reveal">
+        <div class="hero-photo-main">
+          <img src="images/engines-inventory.jpg" alt="Inventario de motores usados Miami Auto Parts Depot" loading="eager"/>
+          <div class="photo-badge-overlay"><i class="fas fa-check-circle"></i> Inventario Real</div>
+        </div>
+        <div class="hero-photo-row">
+          <div class="hero-photo-thumb">
+            <img src="images/transmission.jpg" alt="Transmisiones usadas en Miami" loading="lazy"/>
+            <span>Transmisiones</span>
+          </div>
+          <div class="hero-photo-thumb">
+            <img src="images/engine-single.jpg" alt="Motor usado disponible en Miami" loading="lazy"/>
+            <span>Motores</span>
+          </div>
+          <div class="hero-photo-thumb">
+            <img src="images/alternator.jpg" alt="Alternadores usados Miami" loading="lazy"/>
+            <span>Alternadores</span>
+          </div>
+        </div>
+        <a href="https://wa.link/4526eu" class="card-cta" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-whatsapp"></i>
           Consultar Disponibilidad
         </a>
@@ -1494,6 +1650,97 @@
         <a href="https://wa.link/4526eu" class="cat-item reveal" target="_blank">
           <i class="fas fa-ellipsis-h"></i>
           <span>Y Mucho Más</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery" aria-label="Galería de repuestos reales" style="background:#111; padding:80px 5%;">
+    <div class="container">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-label">Nuestro Inventario Real</span>
+        <h2 class="section-title" style="text-align:center;">FOTOS REALES DE<br/><span style="color:var(--red)">NUESTRO STOCK</span></h2>
+        <p class="section-sub" style="margin:0 auto; text-align:center;">Esto es lo que tenemos disponible. Escríbenos por WhatsApp para consultar disponibilidad de cualquier pieza.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gallery-large">
+          <img src="images/engines-inventory.jpg" alt="Gran inventario de motores usados en Miami Auto Parts Depot" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-cog"></i>
+            <span>Motores — Gran Inventario</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/engine-single.jpg" alt="Motor usado disponible en Miami" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-cog"></i>
+            <span>Motor Completo</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/engine-shop.jpg" alt="Taller de motores usados Miami" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-cog"></i>
+            <span>Motor Inspeccionado</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/transmission.jpg" alt="Transmisiones usadas disponibles en Miami" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-sliders-h"></i>
+            <span>Transmisiones</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item gallery-large">
+          <img src="images/parts-warehouse.jpg" alt="Almacén de repuestos usados Miami Auto Parts Depot" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-warehouse"></i>
+            <span>Nuestro Almacén — Miles de Piezas</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/transmission-parts.jpg" alt="Piezas de transmisión usadas" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-sliders-h"></i>
+            <span>Partes de Transmisión</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/alternator.jpg" alt="Alternadores usados en Miami" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-bolt"></i>
+            <span>Alternadores</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/suspension.jpg" alt="Piezas de suspensión usadas Miami" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-circle-notch"></i>
+            <span>Suspensión</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/brakes.jpg" alt="Frenos usados disponibles en Miami" loading="lazy"/>
+          <div class="gallery-caption">
+            <i class="fas fa-stop-circle"></i>
+            <span>Frenos</span>
+            <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer">Consultar <i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;">
+        <a href="https://wa.link/4526eu" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">
+          <i class="fab fa-whatsapp"></i>
+          Ver Todo el Inventario por WhatsApp
         </a>
       </div>
     </div>
