@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cómo Publicar tu Sitio Web | Miami Auto Parts Depot LLC</title>
+  <meta name="description" content="Guía completa para publicar miamiautopartsdepot.com en internet. Opciones gratuitas y de pago: Netlify, Hostinger, GoDaddy, cPanel y más."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #f0f0f0; overflow-x: hidden; }
+    :root {
+      --red: #e63012; --blue: #4285F4; --green: #34A853;
+      --yellow: #FBBC05; --purple: #9b59b6; --orange: #f39c12;
+      --dark2: #111; --dark3: #1a1a1a; --muted: #666;
+    }
+
+    /* PROGRESS BAR */
+    .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--red), var(--orange)); z-index: 9999; transition: width 0.1s; }
+
+    /* NAV */
+    nav {
+      background: rgba(10,10,10,0.97); border-bottom: 1px solid rgba(230,48,18,0.2);
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+      height: 62px; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+    .logo-text span:first-child { font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #fff; display: block; }
+    .logo-text span:last-child { font-size: 10px; color: var(--red); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+    .nav-back { display: flex; align-items: center; gap: 8px; color: #ccc; text-decoration: none; font-size: 13px; font-weight: 500; padding: 7px 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 50px; transition: all 0.2s; }
+    .nav-back:hover { color: #fff; border-color: var(--red); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #0f0f18 60%, #0a0a0a 100%);
+      padding: 70px 5% 50px; text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 500px;
+      background: radial-gradient(circle, rgba(230,48,18,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(230,48,18,0.1); border: 1px solid rgba(230,48,18,0.25); color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(38px, 7vw, 76px); color: #fff; line-height: 1.0; margin-bottom: 16px; }
+    .hero h1 span.red { color: var(--red); }
+    .hero h1 span.green { color: var(--green); }
+    .hero p { font-size: 17px; color: #777; max-width: 580px; margin: 0 auto 32px; line-height: 1.7; }
+    .hero-file-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--dark3); border: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 22px; border-radius: 10px; font-family: monospace;
+      font-size: 14px; color: #aaa; margin-bottom: 12px;
+    }
+    .hero-file-badge i { color: var(--red); }
+    .hero-file-badge strong { color: #fff; }
+
+    /* CONTAINER */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+
+    /* SECTION */
+    .section { padding: 70px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #555; display: block; margin-bottom: 10px; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 4vw, 48px); color: #fff; line-height: 1.05; margin-bottom: 10px; }
+    .section-sub { font-size: 15px; color: #666; max-width: 580px; line-height: 1.7; }
+
+    /* RECOMMENDATION BANNER */
+    .rec-banner {
+      background: linear-gradient(135deg, rgba(52,168,83,0.1), rgba(52,168,83,0.05));
+      border: 1px solid rgba(52,168,83,0.3);
+      border-radius: 16px; padding: 24px 28px;
+      display: flex; align-items: center; gap: 20px;
+      margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .rec-icon { font-size: 36px; flex-shrink: 0; }
+    .rec-text strong { color: #fff; font-size: 17px; display: block; margin-bottom: 4px; }
+    .rec-text p { font-size: 14px; color: #888; line-height: 1.6; }
+    .rec-btn { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 22px; border-radius: 50px; transition: all 0.2s; white-space: nowrap; }
+    .rec-btn:hover { background: #1e8e3e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(52,168,83,0.35); }
+
+    /* HOSTING CARDS GRID */
+    .hosting-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .hosting-card {
+      background: var(--dark3); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px; padding: 28px; position: relative;
+      transition: all 0.25s; overflow: hidden;
+    }
+    .hosting-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--card-color, #333); }
+    .hosting-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.12); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .hosting-card.featured { border-color: rgba(52,168,83,0.3); background: linear-gradient(135deg, rgba(52,168,83,0.05), var(--dark3)); }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; }
+    .card-logo { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; flex-shrink: 0; }
+    .card-badges { display: flex; flex-direction: column; gap: 5px; align-items: flex-end; }
+    .badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; padding: 3px 9px; border-radius: 20px; text-transform: uppercase; }
+    .badge-free { background: rgba(52,168,83,0.15); color: var(--green); border: 1px solid rgba(52,168,83,0.3); }
+    .badge-paid { background: rgba(251,188,5,0.12); color: var(--yellow); border: 1px solid rgba(251,188,5,0.25); }
+    .badge-best { background: rgba(230,48,18,0.15); color: var(--red); border: 1px solid rgba(230,48,18,0.3); }
+    .badge-easy { background: rgba(66,133,244,0.12); color: var(--blue); border: 1px solid rgba(66,133,244,0.25); }
+    .card-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #fff; margin-bottom: 4px; }
+    .card-tagline { font-size: 13px; color: #666; margin-bottom: 16px; line-height: 1.5; }
+    .card-price { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .card-price span { font-size: 13px; font-weight: 400; color: #555; }
+    .card-features { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 16px 0 20px; }
+    .card-features li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #aaa; }
+    .card-features li i { font-size: 12px; width: 16px; flex-shrink: 0; }
+    .card-features li i.yes { color: var(--green); }
+    .card-features li i.no { color: #444; }
+    .card-features li i.warn { color: var(--yellow); }
+    .card-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; border-radius: 10px; font-size: 14px; font-weight: 700; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; }
+    .card-btn:hover { transform: translateY(-2px); }
+
+    /* STEPS SECTION */
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .step-card { background: var(--dark3); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 22px; display: flex; gap: 16px; }
+    .step-num { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 18px; flex-shrink: 0; }
+    .step-body h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .step-body p { font-size: 13px; color: #666; line-height: 1.6; }
+    .step-body code { background: #0d1117; color: #4285F4; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+
+    /* INFO BOXES */
+    .info-box { border-radius: 12px; padding: 18px 22px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+    .info-box.blue { background: rgba(66,133,244,0.07); border: 1px solid rgba(66,133,244,0.2); }
+    .info-box.green { background: rgba(52,168,83,0.07); border: 1px solid rgba(52,168,83,0.2); }
+    .info-box.yellow { background: rgba(251,188,5,0.07); border: 1px solid rgba(251,188,5,0.2); }
+    .info-box.red { background: rgba(230,48,18,0.07); border: 1px solid rgba(230,48,18,0.2); }
+    .info-box i { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .info-box.blue i { color: var(--blue); }
+    .info-box.green i { color: var(--green); }
+    .info-box.yellow i { color: var(--yellow); }
+    .info-box.red i { color: var(--red); }
+    .info-box strong { color: #fff; font-size: 15px; display: block; margin-bottom: 4px; }
+    .info-box p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    /* COMPARISON TABLE */
+    .comp-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+    .comp-table th { padding: 14px 16px; text-align: left; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #555; background: #111; border-bottom: 1px solid #1a1a1a; }
+    .comp-table td { padding: 14px 16px; font-size: 13px; color: #aaa; border-bottom: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
+    .comp-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .comp-table .host-name { font-weight: 700; color: #fff; font-size: 14px; }
+    .comp-table .check { color: var(--green); }
+    .comp-table .cross { color: #333; }
+    .comp-table .warn-icon { color: var(--yellow); }
+    .comp-table tr.highlight td { background: rgba(52,168,83,0.05); }
+    .comp-table tr.highlight .host-name::after { content: ' ⭐'; }
+
+    /* DOMAIN SECTION */
+    .domain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+    .domain-card { background: var(--dark3); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 18px 20px; text-decoration: none; transition: all 0.2s; }
+    .domain-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.12); }
+    .domain-card .d-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .domain-card .d-price { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+    .domain-card .d-note { font-size: 12px; color: #555; }
+
+    /* FILES BOX */
+    .files-box { background: #0d1117; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px 24px; }
+    .file-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 13px; }
+    .file-item:last-child { border-bottom: none; }
+    .file-item i { color: var(--red); width: 16px; }
+    .file-item .fname { color: #4285F4; font-family: monospace; font-size: 13px; }
+    .file-item .fdesc { color: #555; margin-left: auto; font-size: 12px; }
+
+    /* CTA FINAL */
+    .final-cta { padding: 80px 5%; text-align: center; background: linear-gradient(135deg, #0a0a0a, #0f0f18); }
+    .final-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 5vw, 56px); color: #fff; margin-bottom: 14px; }
+    .final-cta h2 span { color: var(--green); }
+    .final-cta p { font-size: 16px; color: #666; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; border-radius: 50px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.25s; }
+    .cta-btn.green { background: var(--green); color: #fff; }
+    .cta-btn.green:hover { background: #1e8e3e; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(52,168,83,0.4); }
+    .cta-btn.wa { background: #25d366; color: #fff; }
+    .cta-btn.wa:hover { background: #1da851; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,211,102,0.4); }
+    .cta-btn.outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
+    .cta-btn.outline:hover { border-color: #fff; transform: translateY(-3px); }
+
+    /* FOOTER */
+    footer { background: #050505; border-top: 1px solid rgba(255,255,255,0.04); padding: 22px 5%; text-align: center; font-size: 13px; color: #444; }
+    footer a { color: var(--red); text-decoration: none; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s, transform 0.55s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hosting-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .domain-grid { grid-template-columns: repeat(2, 1fr); }
+      .rec-banner { flex-direction: column; }
+      .rec-btn { margin-left: 0; width: 100%; justify-content: center; }
+      .comp-table { font-size: 12px; }
+      .comp-table th, .comp-table td { padding: 10px 10px; }
+    }
+    @media (max-width: 480px) {
+      .domain-grid { grid-template-columns: 1fr; }
+      .cta-btns { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🔧</div>
+      <div class="logo-text">
+        <span>Miami Auto Parts Depot LLC</span>
+        <span>Guía de Publicación</span>
+      </div>
+    </a>
+    <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Volver al Sitio</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge"><i class="fas fa-rocket"></i> &nbsp;Guía de Publicación Web</div>
+    <h1>PUBLICA TU<br/><span class="red">LANDING PAGE</span><br/>EN <span class="green">INTERNET</span></h1>
+    <p>Todo lo que necesitas saber para que <strong style="color:#fff;">miamiautopartsdepot.com</strong> esté en línea y visible para tus clientes en todo el mundo.</p>
+    <div class="hero-file-badge">
+      <i class="fas fa-file-code"></i>
+      Tienes listo: &nbsp;<strong>index.html</strong> &nbsp;·&nbsp; <strong>sitemap.xml</strong> &nbsp;·&nbsp; <strong>robots.txt</strong> &nbsp;·&nbsp; <strong>.htaccess</strong>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ===== SECCIÓN 1: OPCIONES DE HOSTING ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Paso 1 de 3</span>
+          <h2 class="section-title">ELIGE DÓNDE<br/>PUBLICAR TU SITIO</h2>
+          <p class="section-sub">Tienes varias opciones según tu presupuesto y nivel técnico. Te recomendamos <strong style="color:#fff;">Hostinger</strong> por su precio, facilidad y soporte en español.</p>
+        </div>
+
+        <!-- RECOMENDACIÓN PRINCIPAL -->
+        <div class="rec-banner reveal">
+          <div class="rec-icon">⭐</div>
+          <div class="rec-text">
+            <strong>Nuestra recomendación: Hostinger — Desde $2.99/mes</strong>
+            <p>La opción más popular para negocios pequeños. Incluye dominio gratis el primer año, SSL gratis, cPanel fácil de usar, soporte 24/7 en español y subida de archivos en un clic. Ideal para subir tu <code style="color:#4285F4; background:#0d1117; padding:2px 6px; border-radius:4px; font-size:12px;">index.html</code> sin conocimientos técnicos.</p>
+          </div>
+          <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer" class="rec-btn">
+            <i class="fas fa-external-link-alt"></i> Ver Hostinger
+          </a>
+        </div>
+
+        <!-- HOSTING CARDS -->
+        <div class="hosting-grid">
+
+          <!-- HOSTINGER -->
+          <div class="hosting-card featured reveal" style="--card-color: #7b2ff7;">
+            <div class="card-top">
+              <div class="card-logo" style="background:rgba(123,47,247,0.15); color:#7b2ff7; font-size:14px; font-weight:900;">H</div>
+              <div class="card-badges">
+                <span class="badge badge-best">⭐ Recomendado</span>
+                <span class="badge badge-easy">Fácil de usar</span>
+              </div>
+            </div>
+            <div class="card-name">Hostinger</div>
+            <div class="card-tagline">El hosting más popular para negocios. Soporte 24/7 en español, cPanel visual y dominio gratis.</div>
+            <div class="card-price">$2.99 <span>/ mes (plan básico)</span></div>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle yes"></i> Dominio gratis el primer año</li>
+              <li><i class="fas fa-check-circle yes"></i> SSL (https://) gratis incluido</li>
+              <li><i class="fas fa-check-circle yes"></i> Subida de archivos por File Manager</li>
+              <li><i class="fas fa-check-circle yes"></i> Soporte en español 24/7</li>
+              <li><i class="fas fa-check-circle yes"></i> Email profesional incluido</li>
+              <li><i class="fas fa-check-circle yes"></i> Compatible con .htaccess</li>
+            </ul>
+            <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer" class="card-btn" style="background:rgba(123,47,247,0.15); color:#7b2ff7; border:1px solid rgba(123,47,247,0.3);">
+              <i class="fas fa-external-link-alt"></i> Ir a Hostinger.com
+            </a>
+          </div>
+
+          <!-- GODADDY -->
+          <div class="hosting-card reveal" style="--card-color: #1bdbdb;">
+            <div class="card-top">
+              <div class="card-logo" style="background:rgba(27,219,219,0.12); color:#1bdbdb; font-size:13px; font-weight:900;">GD</div>
+              <div class="card-badges">
+                <span class="badge badge-paid">De pago</span>
+              </div>
+            </div>
+            <div class="card-name">GoDaddy</div>
+            <div class="card-tagline">El registrador de dominios más grande del mundo. Muy conocido y confiable para negocios establecidos.</div>
+            <div class="card-price">$5.99 <span>/ mes (hosting básico)</span></div>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle yes"></i> Dominio .com desde $12/año</li>
+              <li><i class="fas fa-check-circle yes"></i> SSL gratis incluido</li>
+              <li><i class="fas fa-check-circle yes"></i> cPanel para subir archivos</li>
+              <li><i class="fas fa-check-circle yes"></i> Soporte telefónico 24/7</li>
+              <li><i class="fas fa-exclamation-triangle warn"></i> Precio sube al renovar</li>
+              <li><i class="fas fa-check-circle yes"></i> Muy conocido y confiable</li>
+            </ul>
+            <a href="https://www.godaddy.com" target="_blank" rel="noopener noreferrer" class="card-btn" style="background:rgba(27,219,219,0.1); color:#1bdbdb; border:1px solid rgba(27,219,219,0.25);">
+              <i class="fas fa-external-link-alt"></i> Ir a GoDaddy.com
+            </a>
+          </div>
+
+          <!-- NETLIFY -->
+          <div class="hosting-card reveal" style="--card-color: #00c7b7;">
+            <div class="card-top">
+              <div class="card-logo" style="background:rgba(0,199,183,0.12); color:#00c7b7; font-size:13px; font-weight:900;">N</div>
+              <div class="card-badges">
+                <span class="badge badge-free">100% Gratis</span>
+              </div>
+            </div>
+            <div class="card-name">Netlify</div>
+            <div class="card-tagline">Plataforma gratuita para sitios estáticos. Arrastra y suelta tu archivo HTML y en segundos está en línea.</div>
+            <div class="card-price">$0 <span>/ mes (plan gratuito)</span></div>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle yes"></i> 100% gratis para sitios HTML</li>
+              <li><i class="fas fa-check-circle yes"></i> SSL (https://) automático</li>
+              <li><i class="fas fa-check-circle yes"></i> Drag &amp; Drop para subir archivos</li>
+              <li><i class="fas fa-exclamation-triangle warn"></i> Dominio gratis: tuempresa.netlify.app</li>
+              <li><i class="fas fa-times-circle no"></i> Dominio propio requiere pago aparte</li>
+              <li><i class="fas fa-check-circle yes"></i> Muy rápido y fácil de usar</li>
+            </ul>
+            <a href="https://www.netlify.com/drop" target="_blank" rel="noopener noreferrer" class="card-btn" style="background:rgba(0,199,183,0.1); color:#00c7b7; border:1px solid rgba(0,199,183,0.25);">
+              <i class="fas fa-external-link-alt"></i> Ir a Netlify Drop
+            </a>
+          </div>
+
+          <!-- BLUEHOST -->
+          <div class="hosting-card reveal" style="--card-color: #2185d0;">
+            <div class="card-top">
+              <div class="card-logo" style="background:rgba(33,133,208,0.12); color:#2185d0; font-size:13px; font-weight:900;">BH</div>
+              <div class="card-badges">
+                <span class="badge badge-paid">De pago</span>
+              </div>
+            </div>
+            <div class="card-name">Bluehost</div>
+            <div class="card-tagline">Hosting recomendado oficialmente por WordPress. Ideal si en el futuro quieres agregar un blog o tienda online.</div>
+            <div class="card-price">$2.95 <span>/ mes (plan básico)</span></div>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle yes"></i> Dominio gratis el primer año</li>
+              <li><i class="fas fa-check-circle yes"></i> SSL gratis incluido</li>
+              <li><i class="fas fa-check-circle yes"></i> cPanel para subir archivos</li>
+              <li><i class="fas fa-check-circle yes"></i> Soporte 24/7 en inglés</li>
+              <li><i class="fas fa-exclamation-triangle warn"></i> Soporte limitado en español</li>
+              <li><i class="fas fa-check-circle yes"></i> Muy popular en EE.UU.</li>
+            </ul>
+            <a href="https://www.bluehost.com" target="_blank" rel="noopener noreferrer" class="card-btn" style="background:rgba(33,133,208,0.1); color:#2185d0; border:1px solid rgba(33,133,208,0.25);">
+              <i class="fas fa-external-link-alt"></i> Ir a Bluehost.com
+            </a>
+          </div>
+
+          <!-- GITHUB PAGES -->
+          <div class="hosting-card reveal" style="--card-color: #888;">
+            <div class="card-top">
+              <div class="card-logo" style="background:rgba(136,136,136,0.1); color:#aaa; font-size:20px;"><i class="fab fa-github"></i></div>
+              <div class="card-badges">
+                <span class="badge badge-free">100% Gratis</span>
+              </div>
+            </div>
+            <div class="card-name">GitHub Pages</div>
+            <div class="card-tagline">Hosting gratuito de GitHub. Tu sitio ya está subido aquí. Solo necesitas conectar tu dominio personalizado.</div>
+            <div class="card-price">$0 <span>/ mes (siempre gratis)</span></div>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle yes"></i> 100% gratis para siempre</li>
+              <li><i class="fas fa-check-circle yes"></i> SSL automático</li>
+              <li><i class="fas fa-check-circle yes"></i> Tu sitio YA está aquí publicado</li>
+              <li><i class="fas fa-exclamation-triangle warn"></i> Dominio gratis: usuario.github.io</li>
+              <li><i class="fas fa-check-circle yes"></i> Dominio propio se puede conectar</li>
+              <li><i class="fas fa-exclamation-triangle warn"></i> Requiere conocimientos básicos de Git</li>
+            </ul>
+            <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer" class="card-btn" style="background:rgba(136,136,136,0.1); color:#aaa; border:1px solid rgba(136,136,136,0.2);">
+              <i class="fas fa-external-link-alt"></i> Ver GitHub Pages
+            </a>
+          </div>
+
+          <!-- IONOS -->
+          <div class="hosting-card reveal" style="--card-color: #003d8f;">
+            <div class="card-top">
+              <div class="card-logo" style="background:rgba(0,61,143,0.15); color:#4a90d9; font-size:13px; font-weight:900;">IO</div>
+              <div class="card-badges">
+                <span class="badge badge-paid">De pago</span>
+                <span class="badge badge-easy">Fácil</span>
+              </div>
+            </div>
+            <div class="card-name">IONOS</div>
+            <div class="card-tagline">Hosting europeo muy confiable. Buena opción para negocios que necesitan soporte profesional y precios estables.</div>
+            <div class="card-price">$1.00 <span>/ mes (primer año)</span></div>
+            <ul class="card-features">
+              <li><i class="fas fa-check-circle yes"></i> Dominio gratis incluido</li>
+              <li><i class="fas fa-check-circle yes"></i> SSL gratis incluido</li>
+              <li><i class="fas fa-check-circle yes"></i> Subida de archivos fácil</li>
+              <li><i class="fas fa-check-circle yes"></i> Soporte en español disponible</li>
+              <li><i class="fas fa-check-circle yes"></i> Email profesional incluido</li>
+              <li><i class="fas fa-exclamation-triangle warn"></i> Precio sube al segundo año</li>
+            </ul>
+            <a href="https://www.ionos.com" target="_blank" rel="noopener noreferrer" class="card-btn" style="background:rgba(0,61,143,0.1); color:#4a90d9; border:1px solid rgba(0,61,143,0.3);">
+              <i class="fas fa-external-link-alt"></i> Ir a IONOS.com
+            </a>
+          </div>
+
+        </div><!-- end hosting-grid -->
+
+        <!-- COMPARISON TABLE -->
+        <div style="margin-top:48px;" class="reveal">
+          <h3 style="font-family:'Bebas Neue',sans-serif; font-size:24px; color:#fff; margin-bottom:6px;">COMPARACIÓN RÁPIDA</h3>
+          <p style="font-size:13px; color:#555; margin-bottom:0;">Elige la opción que mejor se adapte a tu situación.</p>
+          <div style="overflow-x:auto;">
+            <table class="comp-table">
+              <thead>
+                <tr>
+                  <th>Hosting</th>
+                  <th>Precio/mes</th>
+                  <th>Dominio gratis</th>
+                  <th>SSL gratis</th>
+                  <th>Español</th>
+                  <th>Facilidad</th>
+                  <th>Ideal para</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight">
+                  <td><span class="host-name">Hostinger</span></td>
+                  <td>$2.99</td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td>⭐⭐⭐⭐⭐</td>
+                  <td>Negocios pequeños</td>
+                </tr>
+                <tr>
+                  <td><span class="host-name">Netlify</span></td>
+                  <td>Gratis</td>
+                  <td><i class="fas fa-times-circle cross"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-times-circle cross"></i></td>
+                  <td>⭐⭐⭐⭐⭐</td>
+                  <td>Empezar rápido gratis</td>
+                </tr>
+                <tr>
+                  <td><span class="host-name">GoDaddy</span></td>
+                  <td>$5.99</td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td>⭐⭐⭐⭐</td>
+                  <td>Negocios establecidos</td>
+                </tr>
+                <tr>
+                  <td><span class="host-name">Bluehost</span></td>
+                  <td>$2.95</td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-exclamation warn-icon"></i></td>
+                  <td>⭐⭐⭐⭐</td>
+                  <td>Futuro WordPress</td>
+                </tr>
+                <tr>
+                  <td><span class="host-name">GitHub Pages</span></td>
+                  <td>Gratis</td>
+                  <td><i class="fas fa-times-circle cross"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-times-circle cross"></i></td>
+                  <td>⭐⭐⭐</td>
+                  <td>Ya publicado aquí</td>
+                </tr>
+                <tr>
+                  <td><span class="host-name">IONOS</span></td>
+                  <td>$1.00</td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td><i class="fas fa-check-circle check"></i></td>
+                  <td>⭐⭐⭐⭐</td>
+                  <td>Precio bajo primer año</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 2: PASOS PARA PUBLICAR EN HOSTINGER ===== -->
+    <section class="section" style="background: var(--dark2);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Paso 2 de 3 — Método recomendado</span>
+          <h2 class="section-title">CÓMO SUBIR TU SITIO<br/><span style="color:#7b2ff7;">EN HOSTINGER</span></h2>
+          <p class="section-sub">Sigue estos pasos en orden. No necesitas conocimientos técnicos. Solo necesitas el archivo <code style="color:#4285F4; background:#0d1117; padding:2px 6px; border-radius:4px;">index.html</code> y los archivos de tu sitio.</p>
+        </div>
+
+        <!-- ARCHIVOS A SUBIR -->
+        <div class="info-box blue reveal" style="margin-bottom:32px;">
+          <i class="fas fa-folder-open"></i>
+          <div>
+            <strong>Archivos que debes subir a tu hosting</strong>
+            <p>Estos son todos los archivos que tienes listos para subir:</p>
+            <div class="files-box" style="margin-top:12px;">
+              <div class="file-item"><i class="fas fa-file-code"></i><span class="fname">index.html</span><span class="fdesc">Página principal ⭐</span></div>
+              <div class="file-item"><i class="fas fa-file-code"></i><span class="fname">sitemap.xml</span><span class="fdesc">Para Google</span></div>
+              <div class="file-item"><i class="fas fa-file-code"></i><span class="fname">sitemap.xsl</span><span class="fdesc">Estilo del sitemap</span></div>
+              <div class="file-item"><i class="fas fa-file-code"></i><span class="fname">sitemap-page.html</span><span class="fdesc">Mapa visual</span></div>
+              <div class="file-item"><i class="fas fa-file-code"></i><span class="fname">seo-guide.html</span><span class="fdesc">Guía SEO</span></div>
+              <div class="file-item"><i class="fas fa-file-code"></i><span class="fname">hosting-guide.html</span><span class="fdesc">Esta guía</span></div>
+              <div class="file-item"><i class="fas fa-file-alt"></i><span class="fname">robots.txt</span><span class="fdesc">Para buscadores</span></div>
+              <div class="file-item"><i class="fas fa-file-alt"></i><span class="fname">.htaccess</span><span class="fdesc">Rendimiento y seguridad</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(123,47,247,0.15); border:1px solid rgba(123,47,247,0.3); color:#7b2ff7;">1</div>
+            <div class="step-body">
+              <h4>Crea tu cuenta en Hostinger</h4>
+              <p>Ve a <strong style="color:#fff;">hostinger.com</strong>, elige el plan <strong style="color:#fff;">Premium Web Hosting</strong> ($2.99/mes) y crea tu cuenta. Paga con tarjeta o PayPal.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(123,47,247,0.15); border:1px solid rgba(123,47,247,0.3); color:#7b2ff7;">2</div>
+            <div class="step-body">
+              <h4>Registra o conecta tu dominio</h4>
+              <p>Durante el registro, escribe <code>miamiautopartsdepot.com</code> para registrarlo (gratis el primer año) o conéctalo si ya lo tienes en GoDaddy u otro registrador.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(123,47,247,0.15); border:1px solid rgba(123,47,247,0.3); color:#7b2ff7;">3</div>
+            <div class="step-body">
+              <h4>Entra al hPanel (panel de control)</h4>
+              <p>Inicia sesión en tu cuenta de Hostinger. Verás el <strong style="color:#fff;">hPanel</strong>, el panel de control. Busca la sección <strong style="color:#fff;">"Archivos"</strong> o <strong style="color:#fff;">"File Manager"</strong>.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(123,47,247,0.15); border:1px solid rgba(123,47,247,0.3); color:#7b2ff7;">4</div>
+            <div class="step-body">
+              <h4>Abre la carpeta public_html</h4>
+              <p>En el File Manager, navega a la carpeta <code>public_html</code>. Esta es la carpeta raíz de tu sitio web. Todo lo que subas aquí será visible en tu dominio.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(123,47,247,0.15); border:1px solid rgba(123,47,247,0.3); color:#7b2ff7;">5</div>
+            <div class="step-body">
+              <h4>Sube todos tus archivos</h4>
+              <p>Haz clic en <strong style="color:#fff;">"Upload Files"</strong> o <strong style="color:#fff;">"Subir Archivos"</strong> y selecciona todos los archivos de tu sitio: <code>index.html</code>, <code>sitemap.xml</code>, <code>robots.txt</code>, <code>.htaccess</code> y los demás.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(52,168,83,0.15); border:1px solid rgba(52,168,83,0.3); color:var(--green);">✓</div>
+            <div class="step-body">
+              <h4>¡Listo! Verifica que funciona</h4>
+              <p>Abre tu navegador y escribe <code>https://miamiautopartsdepot.com</code>. Si ves tu landing page, ¡el sitio está publicado! El SSL puede tardar hasta 24 horas en activarse.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box yellow reveal" style="margin-top:32px;">
+          <i class="fas fa-lightbulb"></i>
+          <div>
+            <strong>¿Ya tienes el dominio en GoDaddy?</strong>
+            <p>Si ya compraste <strong style="color:#fff;">miamiautopartsdepot.com</strong> en GoDaddy u otro registrador, puedes usar Hostinger solo para el hosting y apuntar los DNS de GoDaddy a Hostinger. El soporte de Hostinger te guía paso a paso en español.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 3: NETLIFY (OPCIÓN GRATIS) ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Opción alternativa — 100% Gratis</span>
+          <h2 class="section-title">PUBLICAR EN<br/><span style="color:#00c7b7;">NETLIFY DROP</span> (GRATIS)</h2>
+          <p class="section-sub">Si quieres publicar tu sitio en minutos y sin costo, Netlify Drop es la opción más rápida. Solo arrastra y suelta tu carpeta.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(0,199,183,0.12); border:1px solid rgba(0,199,183,0.3); color:#00c7b7;">1</div>
+            <div class="step-body">
+              <h4>Ve a netlify.com/drop</h4>
+              <p>Abre <strong style="color:#fff;">app.netlify.com/drop</strong> en tu navegador. No necesitas crear cuenta para publicar.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(0,199,183,0.12); border:1px solid rgba(0,199,183,0.3); color:#00c7b7;">2</div>
+            <div class="step-body">
+              <h4>Arrastra tu carpeta al área</h4>
+              <p>Abre la carpeta de tu sitio en tu computadora y <strong style="color:#fff;">arrástrala completa</strong> al área de Netlify Drop. Espera unos segundos.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(0,199,183,0.12); border:1px solid rgba(0,199,183,0.3); color:#00c7b7;">3</div>
+            <div class="step-body">
+              <h4>Obtén tu URL pública</h4>
+              <p>Netlify te dará una URL como <code>random-name.netlify.app</code>. Tu sitio ya está en línea y accesible desde cualquier parte del mundo.</p>
+            </div>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" style="background:rgba(0,199,183,0.12); border:1px solid rgba(0,199,183,0.3); color:#00c7b7;">4</div>
+            <div class="step-body">
+              <h4>Conecta tu dominio (opcional)</h4>
+              <p>Crea una cuenta gratis en Netlify y en la configuración del sitio puedes conectar tu dominio <code>miamiautopartsdepot.com</code> comprándolo aparte (~$12/año).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box green reveal" style="margin-top:24px;">
+          <i class="fas fa-rocket"></i>
+          <div>
+            <strong>¡Tu sitio puede estar en línea en menos de 2 minutos!</strong>
+            <p>Netlify Drop es la forma más rápida de publicar. Ideal para empezar hoy mismo mientras decides qué hosting comprar. El sitio funcionará perfectamente con tu dominio personalizado una vez que lo conectes.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:28px;">
+          <a href="https://app.netlify.com/drop" target="_blank" rel="noopener noreferrer" class="cta-btn green" style="display:inline-flex;">
+            <i class="fas fa-cloud-upload-alt"></i> Ir a Netlify Drop ahora
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 4: DOMINIO ===== -->
+    <section class="section" style="background: var(--dark2);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Paso 3 de 3</span>
+          <h2 class="section-title">REGISTRA TU<br/><span style="color:var(--yellow);">DOMINIO .COM</span></h2>
+          <p class="section-sub">Si aún no tienes registrado <strong style="color:#fff;">miamiautopartsdepot.com</strong>, aquí están las mejores opciones para comprarlo. Un dominio .com cuesta entre $10–$15 al año.</p>
+        </div>
+
+        <div class="domain-grid">
+          <a href="https://www.namecheap.com" target="_blank" rel="noopener noreferrer" class="domain-card reveal">
+            <div class="d-name"><i class="fas fa-tag" style="color:var(--red); margin-right:8px;"></i>Namecheap</div>
+            <div class="d-price" style="color:#e63012;">$8.88 <span style="font-size:13px; color:#555;">/año</span></div>
+            <div class="d-note">El más barato. Incluye privacidad WHOIS gratis. Muy recomendado.</div>
+          </a>
+          <a href="https://www.godaddy.com" target="_blank" rel="noopener noreferrer" class="domain-card reveal">
+            <div class="d-name"><i class="fas fa-globe" style="color:#1bdbdb; margin-right:8px;"></i>GoDaddy</div>
+            <div class="d-price" style="color:#1bdbdb;">$11.99 <span style="font-size:13px; color:#555;">/año</span></div>
+            <div class="d-note">El más popular. Fácil de usar. Soporte en español disponible.</div>
+          </a>
+          <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer" class="domain-card reveal">
+            <div class="d-name"><i class="fas fa-gift" style="color:#7b2ff7; margin-right:8px;"></i>Hostinger</div>
+            <div class="d-price" style="color:#7b2ff7;">Gratis <span style="font-size:13px; color:#555;">primer año con hosting</span></div>
+            <div class="d-note">Gratis si contratas el hosting. La mejor opción si compras todo junto.</div>
+          </a>
+          <a href="https://www.cloudflare.com/products/registrar/" target="_blank" rel="noopener noreferrer" class="domain-card reveal">
+            <div class="d-name"><i class="fas fa-shield-alt" style="color:#f38020; margin-right:8px;"></i>Cloudflare</div>
+            <div class="d-price" style="color:#f38020;">$9.15 <span style="font-size:13px; color:#555;">/año</span></div>
+            <div class="d-note">Sin margen de ganancia. El precio más justo. Incluye protección DDoS gratis.</div>
+          </a>
+        </div>
+
+        <div class="info-box red reveal" style="margin-top:28px;">
+          <i class="fas fa-exclamation-circle"></i>
+          <div>
+            <strong>¿Ya tienes el dominio registrado?</strong>
+            <p>Si ya compraste <strong style="color:#fff;">miamiautopartsdepot.com</strong> en algún registrador, solo necesitas apuntar los <strong style="color:#fff;">nameservers (DNS)</strong> al hosting que elijas. Hostinger y GoDaddy te guían paso a paso en su soporte.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <h2>¿LISTO PARA<br/>ESTAR EN <span>LÍNEA</span>?</h2>
+    <p>Elige la opción que mejor se adapte a ti y en menos de 1 hora tu sitio estará publicado en internet.</p>
+    <div class="cta-btns">
+      <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer" class="cta-btn green">
+        <i class="fas fa-rocket"></i> Ir a Hostinger (Recomendado)
+      </a>
+      <a href="https://app.netlify.com/drop" target="_blank" rel="noopener noreferrer" class="cta-btn outline">
+        <i class="fas fa-cloud-upload-alt"></i> Netlify Drop (Gratis)
+      </a>
+      <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer" class="cta-btn wa">
+        <i class="fab fa-whatsapp"></i> ¿Necesitas ayuda?
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <a href="index.html">Miami Auto Parts Depot LLC</a> · 13105 Cairo Lane, Opa Locka, FL 33054 · <a href="https://miamiautopartsdepot.com" target="_blank">miamiautopartsdepot.com</a></p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const p = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      document.getElementById('progressBar').style.width = p + '%';
+    });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
