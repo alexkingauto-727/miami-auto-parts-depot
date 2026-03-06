@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mapa del Sitio | Miami Auto Parts Depot LLC</title>
+  <meta name="description" content="Mapa del sitio de Miami Auto Parts Depot LLC. Encuentra todas las secciones: repuestos usados, marcas, exportaciones, sucursales y contacto."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://miamiautopartsdepot.com/sitemap-page.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0a;
+      color: #f0f0f0;
+      line-height: 1.6;
+    }
+    :root {
+      --red: #e63012;
+      --blue: #4285F4;
+      --green: #34A853;
+      --yellow: #FBBC05;
+      --dark2: #111;
+      --dark3: #1a1a1a;
+      --muted: #666;
+    }
+
+    /* NAV */
+    nav {
+      background: rgba(10,10,10,0.97);
+      border-bottom: 1px solid rgba(230,48,18,0.25);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 36px; height: 36px; background: var(--red);
+      border-radius: 8px; display: flex; align-items: center;
+      justify-content: center; font-size: 17px;
+    }
+    .logo-text span:first-child {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px; color: #fff; display: block;
+    }
+    .logo-text span:last-child {
+      font-size: 10px; color: var(--red);
+      letter-spacing: 2px; text-transform: uppercase; font-weight: 600;
+    }
+    .nav-back {
+      display: flex; align-items: center; gap: 8px;
+      color: #ccc; text-decoration: none; font-size: 13px;
+      font-weight: 500; padding: 7px 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50px; transition: all 0.2s;
+    }
+    .nav-back:hover { color: #fff; border-color: var(--red); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a, #0f0f18);
+      padding: 64px 5% 48px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(66,133,244,0.1);
+      border: 1px solid rgba(66,133,244,0.25);
+      color: #4285F4; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 50px; margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      color: #fff; line-height: 1.05; margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--red); }
+    .hero p { font-size: 16px; color: #777; max-width: 520px; margin: 0 auto; }
+
+    /* STATS ROW */
+    .stats-row {
+      display: flex; justify-content: center; gap: 40px;
+      padding: 24px 5%;
+      background: var(--dark2);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-item .num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px; color: var(--red);
+    }
+    .stat-item .lbl { font-size: 12px; color: #555; }
+
+    /* MAIN GRID */
+    .sitemap-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 5%;
+    }
+
+    /* SECTION BLOCK */
+    .sm-section {
+      margin-bottom: 48px;
+    }
+    .sm-section-header {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .sm-section-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .sm-section-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px; color: #fff; letter-spacing: 1px;
+    }
+    .sm-section-header p { font-size: 12px; color: #555; margin-top: 2px; }
+
+    /* CARDS GRID */
+    .sm-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+    .sm-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 14px;
+      transition: all 0.22s;
+      position: relative;
+      overflow: hidden;
+    }
+    .sm-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      border-radius: 3px 0 0 3px;
+      background: var(--card-color, #333);
+      transition: width 0.2s;
+    }
+    .sm-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.12); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .sm-card:hover::before { width: 5px; }
+    .sm-card-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0;
+    }
+    .sm-card-text .title {
+      font-size: 14px; font-weight: 600; color: #fff;
+      display: block; margin-bottom: 2px;
+    }
+    .sm-card-text .url {
+      font-size: 11px; color: #555; font-family: monospace;
+    }
+    .sm-card .arrow {
+      margin-left: auto; color: #333; font-size: 12px;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .sm-card:hover .arrow { color: #666; transform: translateX(3px); }
+
+    /* Priority badges */
+    .priority-tag {
+      position: absolute;
+      top: 8px; right: 8px;
+      font-size: 9px; font-weight: 700;
+      padding: 2px 7px; border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .p-1 { background: rgba(230,48,18,0.15); color: var(--red); }
+    .p-09 { background: rgba(230,48,18,0.1); color: #e8704a; }
+    .p-08 { background: rgba(251,188,5,0.12); color: var(--yellow); }
+    .p-07 { background: rgba(136,136,136,0.12); color: #888; }
+    .p-06 { background: rgba(100,100,100,0.1); color: #666; }
+    .p-05 { background: rgba(80,80,80,0.1); color: #555; }
+
+    /* XML SECTION */
+    .xml-section {
+      background: var(--dark2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .xml-section h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; color: #fff; margin-bottom: 8px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .xml-section h3 i { color: var(--blue); }
+    .xml-section p { font-size: 13px; color: #666; margin-bottom: 16px; }
+    .xml-url-box {
+      display: flex; align-items: center; gap: 12px;
+      background: #0d1117;
+      border: 1px solid rgba(66,133,244,0.2);
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-family: monospace; font-size: 14px;
+      color: #4285F4; flex-wrap: wrap; gap: 12px;
+    }
+    .xml-url-box i { color: #4285F4; }
+    .xml-url-box a { color: #4285F4; text-decoration: none; }
+    .xml-url-box a:hover { text-decoration: underline; }
+    .copy-btn {
+      margin-left: auto;
+      background: rgba(66,133,244,0.15);
+      border: 1px solid rgba(66,133,244,0.3);
+      color: #4285F4; font-size: 12px; font-weight: 600;
+      padding: 6px 14px; border-radius: 6px; cursor: pointer;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .copy-btn:hover { background: #4285F4; color: #fff; }
+
+    /* SUBMIT STEPS */
+    .submit-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px; margin-top: 20px;
+    }
+    .submit-step {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .step-circle {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(66,133,244,0.15);
+      border: 1px solid rgba(66,133,244,0.3);
+      color: #4285F4; font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .submit-step p { font-size: 12px; color: #777; line-height: 1.5; }
+    .submit-step strong { color: #ccc; font-size: 13px; display: block; margin-bottom: 3px; }
+
+    /* SOCIAL SECTION */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+    .social-card {
+      border-radius: 12px;
+      padding: 18px 20px;
+      text-decoration: none;
+      display: flex; align-items: center; gap: 14px;
+      transition: all 0.22s;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .social-card:hover { transform: translateY(-3px); }
+    .social-card.fb { background: rgba(24,119,242,0.08); border-color: rgba(24,119,242,0.2); }
+    .social-card.fb:hover { background: rgba(24,119,242,0.15); }
+    .social-card.ig { background: rgba(193,53,132,0.08); border-color: rgba(193,53,132,0.2); }
+    .social-card.ig:hover { background: rgba(193,53,132,0.15); }
+    .social-card.tt { background: rgba(255,0,80,0.08); border-color: rgba(255,0,80,0.2); }
+    .social-card.tt:hover { background: rgba(255,0,80,0.15); }
+    .social-card.wa { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.2); }
+    .social-card.wa:hover { background: rgba(37,211,102,0.15); }
+    .social-icon { font-size: 22px; }
+    .social-card.fb .social-icon { color: #1877F2; }
+    .social-card.ig .social-icon { color: #C13584; }
+    .social-card.tt .social-icon { color: #ff0050; }
+    .social-card.wa .social-icon { color: #25d366; }
+    .social-name { font-size: 14px; font-weight: 600; color: #fff; display: block; }
+    .social-handle { font-size: 11px; color: #555; }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 24px 5%;
+      text-align: center;
+      font-size: 13px; color: #444;
+    }
+    footer a { color: var(--red); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .sm-cards { grid-template-columns: 1fr; }
+      .submit-steps { grid-template-columns: 1fr; }
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { gap: 20px; }
+    }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s, transform 0.5s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🔧</div>
+      <div class="logo-text">
+        <span>Miami Auto Parts Depot LLC</span>
+        <span>Mapa del Sitio</span>
+      </div>
+    </a>
+    <a href="index.html" class="nav-back">
+      <i class="fas fa-arrow-left"></i> Volver al Inicio
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge"><i class="fab fa-google"></i> &nbsp;Optimizado para Google</div>
+    <h1>MAPA DEL <span>SITIO</span></h1>
+    <p>Todas las páginas y secciones de <strong style="color:#fff;">miamiautopartsdepot.com</strong> organizadas para Google y para ti.</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="num">12</div>
+      <div class="lbl">URLs Indexadas</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">4</div>
+      <div class="lbl">Sucursales</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">16</div>
+      <div class="lbl">Marcas de Autos</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">12</div>
+      <div class="lbl">Categorías de Repuestos</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">4</div>
+      <div class="lbl">Redes Sociales</div>
+    </div>
+  </div>
+
+  <div class="sitemap-container">
+
+    <!-- XML SITEMAP BOX -->
+    <div class="xml-section reveal">
+      <h3><i class="fas fa-code"></i> Sitemap XML para Google Search Console</h3>
+      <p>Copia esta URL y pégala en Google Search Console → Sitemaps para que Google indexe tu sitio automáticamente.</p>
+      <div class="xml-url-box">
+        <i class="fas fa-link"></i>
+        <a href="https://miamiautopartsdepot.com/sitemap.xml" target="_blank" rel="noopener">
+          https://miamiautopartsdepot.com/sitemap.xml
+        </a>
+        <button class="copy-btn" onclick="navigator.clipboard.writeText('https://miamiautopartsdepot.com/sitemap.xml').then(()=>{this.textContent='¡Copiado!';setTimeout(()=>{this.textContent='Copiar URL'},2000)})">
+          <i class="fas fa-copy"></i> Copiar URL
+        </button>
+      </div>
+      <div class="submit-steps">
+        <div class="submit-step">
+          <div class="step-circle">1</div>
+          <div><strong>Abre Search Console</strong><p>Ve a search.google.com/search-console e inicia sesión con tu cuenta Google.</p></div>
+        </div>
+        <div class="submit-step">
+          <div class="step-circle">2</div>
+          <div><strong>Selecciona tu propiedad</strong><p>Elige miamiautopartsdepot.com en el menú de propiedades.</p></div>
+        </div>
+        <div class="submit-step">
+          <div class="step-circle">3</div>
+          <div><strong>Ve a "Sitemaps"</strong><p>En el menú lateral izquierdo, haz clic en "Índice" → "Sitemaps".</p></div>
+        </div>
+        <div class="submit-step">
+          <div class="step-circle">4</div>
+          <div><strong>Pega la URL y envía</strong><p>Escribe <code style="color:#4285F4;font-size:11px;">sitemap.xml</code> en el campo y haz clic en "Enviar".</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PÁGINAS PRINCIPALES -->
+    <div class="sm-section reveal">
+      <div class="sm-section-header">
+        <div class="sm-section-icon" style="background:rgba(230,48,18,0.15);">
+          <i class="fas fa-home" style="color:var(--red);"></i>
+        </div>
+        <div>
+          <h2>Páginas Principales</h2>
+          <p>Páginas completas del sitio web</p>
+        </div>
+      </div>
+      <div class="sm-cards">
+        <a href="index.html" class="sm-card" style="--card-color: var(--red);">
+          <span class="priority-tag p-1">1.0</span>
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.15);">
+            <i class="fas fa-home" style="color:var(--red);"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Página de Inicio</span>
+            <span class="url">miamiautopartsdepot.com/</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="seo-guide.html" class="sm-card" style="--card-color: var(--blue);">
+          <span class="priority-tag p-08">0.8</span>
+          <div class="sm-card-icon" style="background:rgba(66,133,244,0.15);">
+            <i class="fab fa-google" style="color:var(--blue);"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Guía SEO Google</span>
+            <span class="url">/seo-guide.html</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="sitemap-page.html" class="sm-card" style="--card-color: var(--green);">
+          <span class="priority-tag p-05">0.5</span>
+          <div class="sm-card-icon" style="background:rgba(52,168,83,0.15);">
+            <i class="fas fa-sitemap" style="color:var(--green);"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Mapa del Sitio</span>
+            <span class="url">/sitemap-page.html</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="sitemap.xml" class="sm-card" style="--card-color: #FBBC05;">
+          <span class="priority-tag p-08">XML</span>
+          <div class="sm-card-icon" style="background:rgba(251,188,5,0.12);">
+            <i class="fas fa-code" style="color:#FBBC05;"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Sitemap XML</span>
+            <span class="url">/sitemap.xml</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- SECCIONES DE LA HOMEPAGE -->
+    <div class="sm-section reveal">
+      <div class="sm-section-header">
+        <div class="sm-section-icon" style="background:rgba(66,133,244,0.15);">
+          <i class="fas fa-layer-group" style="color:var(--blue);"></i>
+        </div>
+        <div>
+          <h2>Secciones del Sitio</h2>
+          <p>Todas las secciones de la página principal</p>
+        </div>
+      </div>
+      <div class="sm-cards">
+        <a href="index.html#categories" class="sm-card" style="--card-color:#e63012;">
+          <span class="priority-tag p-09">0.9</span>
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);">
+            <i class="fas fa-cogs" style="color:var(--red);"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Inventario / Repuestos</span>
+            <span class="url">/#categories</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="index.html#brands" class="sm-card" style="--card-color:#4285F4;">
+          <span class="priority-tag p-08">0.8</span>
+          <div class="sm-card-icon" style="background:rgba(66,133,244,0.12);">
+            <i class="fas fa-car" style="color:var(--blue);"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Marcas Disponibles</span>
+            <span class="url">/#brands</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="index.html#export" class="sm-card" style="--card-color:#34A853;">
+          <span class="priority-tag p-08">0.8</span>
+          <div class="sm-card-icon" style="background:rgba(52,168,83,0.12);">
+            <i class="fas fa-globe-americas" style="color:var(--green);"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Exportaciones</span>
+            <span class="url">/#export</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="index.html#branches" class="sm-card" style="--card-color:#FBBC05;">
+          <span class="priority-tag p-08">0.8</span>
+          <div class="sm-card-icon" style="background:rgba(251,188,5,0.1);">
+            <i class="fas fa-map-marker-alt" style="color:#FBBC05;"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Sucursales</span>
+            <span class="url">/#branches</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="index.html#why" class="sm-card" style="--card-color:#888;">
+          <span class="priority-tag p-07">0.7</span>
+          <div class="sm-card-icon" style="background:rgba(136,136,136,0.1);">
+            <i class="fas fa-star" style="color:#888;"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Por Qué Elegirnos</span>
+            <span class="url">/#why</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="index.html#how" class="sm-card" style="--card-color:#888;">
+          <span class="priority-tag p-06">0.6</span>
+          <div class="sm-card-icon" style="background:rgba(136,136,136,0.1);">
+            <i class="fas fa-list-ol" style="color:#888;"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Cómo Funciona</span>
+            <span class="url">/#how</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="index.html#testimonials" class="sm-card" style="--card-color:#888;">
+          <span class="priority-tag p-06">0.6</span>
+          <div class="sm-card-icon" style="background:rgba(136,136,136,0.1);">
+            <i class="fas fa-comments" style="color:#888;"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Testimonios</span>
+            <span class="url">/#testimonials</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="index.html#location" class="sm-card" style="--card-color:#e63012;">
+          <span class="priority-tag p-09">0.9</span>
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);">
+            <i class="fas fa-map-pin" style="color:var(--red);"></i>
+          </div>
+          <div class="sm-card-text">
+            <span class="title">Ubicación y Contacto</span>
+            <span class="url">/#location</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- CATEGORÍAS DE REPUESTOS -->
+    <div class="sm-section reveal">
+      <div class="sm-section-header">
+        <div class="sm-section-icon" style="background:rgba(230,48,18,0.15);">
+          <i class="fas fa-tools" style="color:var(--red);"></i>
+        </div>
+        <div>
+          <h2>Categorías de Repuestos</h2>
+          <p>Tipos de piezas disponibles en inventario</p>
+        </div>
+      </div>
+      <div class="sm-cards">
+        <a href="https://wa.me/18092678567?text=Necesito+un+motor+usado" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-cog" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Motores</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+una+transmision+usada" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-cogs" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Transmisiones</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+un+alternador+usado" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-bolt" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Alternadores</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+un+radiador+usado" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-thermometer-half" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Radiadores</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+puertas+o+paneles+usados" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-door-open" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Puertas y Paneles</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+faros+o+luces+usados" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-lightbulb" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Faros y Luces</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+piezas+de+suspension" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-car-crash" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Suspensión</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+piezas+de+frenos" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-circle-notch" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Frenos</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+piezas+de+AC+o+calefaccion" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-wind" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">A/C y Calefacción</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+ejes+o+diferenciales" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-dharmachakra" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Ejes y Diferenciales</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+una+caja+de+direccion" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-steering-wheel" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Cajas de Dirección</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Necesito+un+repuesto+de+motor+de+arranque" target="_blank" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12);"><i class="fas fa-key" style="color:var(--red);"></i></div>
+          <div class="sm-card-text"><span class="title">Motores de Arranque</span><span class="url">Consultar por WhatsApp</span></div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- SUCURSALES -->
+    <div class="sm-section reveal">
+      <div class="sm-section-header">
+        <div class="sm-section-icon" style="background:rgba(251,188,5,0.12);">
+          <i class="fas fa-map-marker-alt" style="color:#FBBC05;"></i>
+        </div>
+        <div>
+          <h2>Nuestras Sucursales</h2>
+          <p>4 ubicaciones para servirte mejor</p>
+        </div>
+      </div>
+      <div class="sm-cards">
+        <a href="index.html#location" class="sm-card" style="--card-color:#e63012;">
+          <div class="sm-card-icon" style="background:rgba(230,48,18,0.12); font-size:20px;">🇺🇸</div>
+          <div class="sm-card-text">
+            <span class="title">Miami, Florida — HQ</span>
+            <span class="url">13105 Cairo Lane, Opa Locka FL</span>
+          </div>
+          <i class="fas fa-chevron-right arrow"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Hola+sucursal+Santo+Domingo" target="_blank" class="sm-card" style="--card-color:#4285F4;">
+          <div class="sm-card-icon" style="background:rgba(66,133,244,0.1); font-size:20px;">🇩🇴</div>
+          <div class="sm-card-text">
+            <span class="title">Santo Domingo, RD</span>
+            <span class="url">República Dominicana</span>
+          </div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Hola+sucursal+Santiago" target="_blank" class="sm-card" style="--card-color:#4285F4;">
+          <div class="sm-card-icon" style="background:rgba(66,133,244,0.1); font-size:20px;">🇩🇴</div>
+          <div class="sm-card-text">
+            <span class="title">Santiago del Cibao, RD</span>
+            <span class="url">República Dominicana</span>
+          </div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+        <a href="https://wa.me/18092678567?text=Hola+sucursal+Costa+Rica" target="_blank" class="sm-card" style="--card-color:#34A853;">
+          <div class="sm-card-icon" style="background:rgba(52,168,83,0.1); font-size:20px;">🇨🇷</div>
+          <div class="sm-card-text">
+            <span class="title">Costa Rica</span>
+            <span class="url">Centroamérica</span>
+          </div>
+          <i class="fab fa-whatsapp arrow" style="color:#25d366;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- REDES SOCIALES -->
+    <div class="sm-section reveal">
+      <div class="sm-section-header">
+        <div class="sm-section-icon" style="background:rgba(255,255,255,0.05);">
+          <i class="fas fa-share-alt" style="color:#aaa;"></i>
+        </div>
+        <div>
+          <h2>Redes Sociales</h2>
+          <p>Síguenos en todas nuestras plataformas</p>
+        </div>
+      </div>
+      <div class="social-grid">
+        <a href="https://www.facebook.com/profile.php?id=61586469360382" target="_blank" rel="noopener noreferrer" class="social-card fb">
+          <i class="fab fa-facebook social-icon"></i>
+          <div>
+            <span class="social-name">Facebook</span>
+            <span class="social-handle">Miami Auto Parts Depot</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/maautopartsdepot" target="_blank" rel="noopener noreferrer" class="social-card ig">
+          <i class="fab fa-instagram social-icon"></i>
+          <div>
+            <span class="social-name">Instagram</span>
+            <span class="social-handle">@maautopartsdepot</span>
+          </div>
+        </a>
+        <a href="https://www.tiktok.com/@miamiautopartsdep" target="_blank" rel="noopener noreferrer" class="social-card tt">
+          <i class="fab fa-tiktok social-icon"></i>
+          <div>
+            <span class="social-name">TikTok</span>
+            <span class="social-handle">@miamiautopartsdep</span>
+          </div>
+        </a>
+        <a href="https://wa.me/18092678567?text=Hola%2C%20necesito%20un%20repuesto." target="_blank" rel="noopener noreferrer" class="social-card wa">
+          <i class="fab fa-whatsapp social-icon"></i>
+          <div>
+            <span class="social-name">WhatsApp</span>
+            <span class="social-handle">+1 (809) 267-8567</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- end sitemap-container -->
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <a href="index.html">Miami Auto Parts Depot LLC</a> · 13105 Cairo Lane, Opa Locka, FL 33054 · <a href="https://miamiautopartsdepot.com" target="_blank">miamiautopartsdepot.com</a></p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
