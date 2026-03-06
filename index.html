@@ -1405,6 +1405,137 @@
       .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
       .gallery-large { grid-column: span 1; }
     }
+
+    /* ===== VIDEO SHOWCASE ===== */
+    .video-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .video-frame {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid rgba(230,48,18,0.35);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(230,48,18,0.1);
+    }
+    .video-frame iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-caption-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+      padding: 16px 24px;
+      flex-wrap: wrap;
+    }
+    .video-caption-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .video-play-icon {
+      width: 40px; height: 40px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 14px;
+      flex-shrink: 0;
+      box-shadow: 0 0 18px var(--red-glow);
+    }
+    .video-caption-left strong {
+      display: block;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .video-caption-left span {
+      font-size: 12px;
+      color: #777;
+    }
+    .video-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: all 0.25s;
+      white-space: nowrap;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+    }
+    .video-wa-btn:hover {
+      background: #1da851;
+      transform: scale(1.04);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+    }
+    .video-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .video-feature-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .video-feature-item:hover {
+      background: rgba(230,48,18,0.07);
+      border-color: rgba(230,48,18,0.25);
+      transform: translateY(-4px);
+    }
+    .video-feature-icon {
+      width: 52px; height: 52px;
+      background: rgba(230,48,18,0.12);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--red);
+      font-size: 22px;
+      margin: 0 auto 16px;
+      transition: background 0.3s;
+    }
+    .video-feature-item:hover .video-feature-icon {
+      background: rgba(230,48,18,0.22);
+    }
+    .video-feature-item h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .video-feature-item p {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.7;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .video-features { grid-template-columns: 1fr; }
+      .video-caption-bar { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
 <body>
@@ -1741,6 +1872,74 @@
         <a href="https://wa.link/4526eu" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">
           <i class="fab fa-whatsapp"></i>
           Ver Todo el Inventario por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SHOWCASE -->
+  <section id="video" aria-label="Video de nuestras instalaciones" style="background:#0d0d0d; padding:80px 5%; position:relative; overflow:hidden;">
+    <!-- Decorative background glow -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(230,48,18,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-label">Conócenos en Video</span>
+        <h2 class="section-title" style="text-align:center;">MIRA NUESTRAS<br/><span style="color:var(--red)">INSTALACIONES</span></h2>
+        <p class="section-sub" style="margin:0 auto; text-align:center;">Descubre cómo operamos — miles de motores, transmisiones y repuestos organizados y listos para ti. Así es Miami Auto Parts Depot LLC por dentro.</p>
+      </div>
+
+      <!-- Main Video Embed -->
+      <div class="video-wrapper reveal" style="margin-top:48px;">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/A3JtYez51-0?rel=0&modestbranding=1&color=white"
+            title="Tour de instalaciones de repuestos usados — Miami Auto Parts Depot LLC"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <!-- Video caption bar -->
+        <div class="video-caption-bar">
+          <div class="video-caption-left">
+            <div class="video-play-icon"><i class="fas fa-play"></i></div>
+            <div>
+              <strong>Tour de Instalaciones Profesionales</strong>
+              <span>Así es como operamos — organizado, limpio y con miles de piezas en stock</span>
+            </div>
+          </div>
+          <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer" class="video-wa-btn">
+            <i class="fab fa-whatsapp"></i>
+            ¿Tienes el repuesto que necesito?
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 feature highlights below video -->
+      <div class="video-features reveal">
+        <div class="video-feature-item">
+          <div class="video-feature-icon"><i class="fas fa-warehouse"></i></div>
+          <h4>Almacén Organizado</h4>
+          <p>Miles de piezas en estantes industriales, clasificadas por marca, modelo y año para encontrarlas al instante.</p>
+        </div>
+        <div class="video-feature-item">
+          <div class="video-feature-icon"><i class="fas fa-search"></i></div>
+          <h4>Inspección Detallada</h4>
+          <p>Cada motor y transmisión es inspeccionado y probado antes de la venta. Lo que ves es lo que recibes.</p>
+        </div>
+        <div class="video-feature-item">
+          <div class="video-feature-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h4>Listo para Enviar</h4>
+          <p>Empacamos con cuidado y enviamos a Miami, toda Florida, República Dominicana, Costa Rica y más.</p>
+        </div>
+      </div>
+
+      <!-- CTA below video -->
+      <div style="text-align:center; margin-top:44px;">
+        <a href="https://wa.link/4526eu" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">
+          <i class="fab fa-whatsapp"></i>
+          Consulta Disponibilidad Ahora
         </a>
       </div>
     </div>
