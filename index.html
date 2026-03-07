@@ -1536,6 +1536,231 @@
       .video-features { grid-template-columns: 1fr; }
       .video-caption-bar { flex-direction: column; align-items: flex-start; }
     }
+
+    /* ===== HERO PART CARDS ===== */
+    .hero-parts-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .hero-part-card {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      transition: all 0.3s;
+      background: rgba(255,255,255,0.03);
+    }
+    .hero-part-card:hover {
+      border-color: rgba(230,48,18,0.5);
+      transform: translateX(4px);
+      background: rgba(230,48,18,0.05);
+    }
+    .hero-part-img {
+      position: relative;
+      width: 130px;
+      height: 90px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .hero-part-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .hero-part-card:hover .hero-part-img img {
+      transform: scale(1.08);
+    }
+    .hero-part-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #25d366;
+      font-size: 13px;
+      font-weight: 700;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .hero-part-card:hover .hero-part-overlay {
+      opacity: 1;
+    }
+    .hero-part-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 16px;
+      flex: 1;
+    }
+    .hero-part-info i {
+      color: var(--red);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .hero-part-info > span {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      flex: 1;
+    }
+    .hero-part-badge {
+      background: rgba(37,211,102,0.15);
+      color: #25d366;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(37,211,102,0.3);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ===== SHORT VIDEO CTA SECTION ===== */
+    .shortvid-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .shortvid-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 32px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      transition: all 0.35s;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .shortvid-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.35s;
+      border-radius: 20px;
+    }
+    .tiktok-card::before { background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(105,201,208,0.1)); }
+    .instagram-card::before { background: linear-gradient(135deg, rgba(131,58,180,0.1), rgba(253,29,29,0.1), rgba(252,176,69,0.1)); }
+    .facebook-card::before { background: linear-gradient(135deg, rgba(24,119,242,0.1), rgba(24,119,242,0.05)); }
+    .shortvid-card:hover::before { opacity: 1; }
+    .tiktok-card:hover { border-color: rgba(105,201,208,0.5); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .instagram-card:hover { border-color: rgba(253,29,29,0.4); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .facebook-card:hover { border-color: rgba(24,119,242,0.4); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .shortvid-icon-wrap {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .shortvid-platform-icon {
+      width: 70px;
+      height: 70px;
+    }
+    .tiktok-card .shortvid-platform-icon { color: #fff; }
+    .instagram-card .shortvid-platform-icon { color: #e1306c; }
+    .facebook-card .shortvid-platform-icon { color: #1877f2; }
+    .shortvid-play-pulse {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      width: 26px;
+      height: 26px;
+      background: var(--red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 9px;
+      animation: pulse 2s infinite;
+      border: 2px solid #0d0d0d;
+    }
+    .shortvid-info {
+      z-index: 1;
+    }
+    .shortvid-info strong {
+      display: block;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .shortvid-info span {
+      display: block;
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .shortvid-tag {
+      display: inline-block;
+      background: rgba(230,48,18,0.12);
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(230,48,18,0.25);
+    }
+    .shortvid-arrow {
+      color: #444;
+      font-size: 16px;
+      transition: all 0.3s;
+      z-index: 1;
+    }
+    .shortvid-card:hover .shortvid-arrow {
+      color: #fff;
+      transform: translateX(4px);
+    }
+    .shortvid-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 48px;
+      padding: 24px 32px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      flex-wrap: wrap;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .shortvid-cta-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ccc;
+      font-size: 15px;
+    }
+    .shortvid-cta-text i { font-size: 20px; }
+    .shortvid-cta-text strong { color: #fff; }
+    @media (max-width: 768px) {
+      .shortvid-grid { grid-template-columns: 1fr; }
+      .hero-parts-cards { gap: 10px; }
+      .hero-part-img { width: 100px; height: 75px; }
+      .shortvid-cta { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -1625,25 +1850,42 @@
         </div>
       </div>
       <div class="hero-photo-stack reveal">
-        <div class="hero-photo-main">
-          <img src="images/engines-inventory.jpg" alt="Inventario de motores usados Miami Auto Parts Depot" loading="eager"/>
-          <div class="photo-badge-overlay"><i class="fas fa-check-circle"></i> Inventario Real</div>
+        <div class="hero-parts-cards">
+          <a href="https://wa.link/4526eu" class="hero-part-card" target="_blank" rel="noopener noreferrer">
+            <div class="hero-part-img">
+              <img src="images/engine-hero.jpg" alt="Motor usado disponible en Miami Auto Parts Depot" loading="eager"/>
+              <div class="hero-part-overlay"><i class="fab fa-whatsapp"></i> Consultar</div>
+            </div>
+            <div class="hero-part-info">
+              <i class="fas fa-cog"></i>
+              <span>Motores</span>
+              <span class="hero-part-badge">Disponible</span>
+            </div>
+          </a>
+          <a href="https://wa.link/4526eu" class="hero-part-card" target="_blank" rel="noopener noreferrer">
+            <div class="hero-part-img">
+              <img src="images/transmission-hero.jpg" alt="Transmisión completa usada en Miami" loading="eager"/>
+              <div class="hero-part-overlay"><i class="fab fa-whatsapp"></i> Consultar</div>
+            </div>
+            <div class="hero-part-info">
+              <i class="fas fa-sliders-h"></i>
+              <span>Transmisiones</span>
+              <span class="hero-part-badge">Disponible</span>
+            </div>
+          </a>
+          <a href="https://wa.link/4526eu" class="hero-part-card" target="_blank" rel="noopener noreferrer">
+            <div class="hero-part-img">
+              <img src="images/alternator.jpg" alt="Alternadores usados en Miami" loading="lazy"/>
+              <div class="hero-part-overlay"><i class="fab fa-whatsapp"></i> Consultar</div>
+            </div>
+            <div class="hero-part-info">
+              <i class="fas fa-bolt"></i>
+              <span>Alternadores</span>
+              <span class="hero-part-badge">Disponible</span>
+            </div>
+          </a>
         </div>
-        <div class="hero-photo-row">
-          <div class="hero-photo-thumb">
-            <img src="images/transmission.jpg" alt="Transmisiones usadas en Miami" loading="lazy"/>
-            <span>Transmisiones</span>
-          </div>
-          <div class="hero-photo-thumb">
-            <img src="images/engine-single.jpg" alt="Motor usado disponible en Miami" loading="lazy"/>
-            <span>Motores</span>
-          </div>
-          <div class="hero-photo-thumb">
-            <img src="images/alternator.jpg" alt="Alternadores usados Miami" loading="lazy"/>
-            <span>Alternadores</span>
-          </div>
-        </div>
-        <a href="https://wa.link/4526eu" class="card-cta" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.link/4526eu" class="card-cta" target="_blank" rel="noopener noreferrer" style="margin-top:14px;">
           <i class="fab fa-whatsapp"></i>
           Consultar Disponibilidad
         </a>
@@ -1877,69 +2119,78 @@
     </div>
   </section>
 
-  <!-- VIDEO SHOWCASE -->
-  <section id="video" aria-label="Video de nuestras instalaciones" style="background:#0d0d0d; padding:80px 5%; position:relative; overflow:hidden;">
-    <!-- Decorative background glow -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(230,48,18,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+  <!-- SHORT VIDEO CTA SECTION -->
+  <section id="videos" aria-label="Videos cortos de repuestos" style="background:#0d0d0d; padding:70px 5%; position:relative; overflow:hidden;">
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(230,48,18,0.08) 0%,transparent 70%);pointer-events:none;"></div>
     <div class="container" style="position:relative;z-index:1;">
       <div class="section-header reveal" style="text-align:center;">
-        <span class="section-label">Conócenos en Video</span>
-        <h2 class="section-title" style="text-align:center;">MIRA NUESTRAS<br/><span style="color:var(--red)">INSTALACIONES</span></h2>
-        <p class="section-sub" style="margin:0 auto; text-align:center;">Descubre cómo operamos — miles de motores, transmisiones y repuestos organizados y listos para ti. Así es Miami Auto Parts Depot LLC por dentro.</p>
+        <span class="section-label">Míranos en Acción</span>
+        <h2 class="section-title" style="text-align:center;">VIDEOS CORTOS<br/><span style="color:var(--red)">DE NUESTRO STOCK</span></h2>
+        <p class="section-sub" style="margin:0 auto; text-align:center;">Ve nuestros repuestos en video antes de comprar. Motores, transmisiones y más — todo disponible ahora mismo.</p>
       </div>
 
-      <!-- Main Video Embed -->
-      <div class="video-wrapper reveal" style="margin-top:48px;">
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/A3JtYez51-0?rel=0&modestbranding=1&color=white"
-            title="Tour de instalaciones de repuestos usados — Miami Auto Parts Depot LLC"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-        <!-- Video caption bar -->
-        <div class="video-caption-bar">
-          <div class="video-caption-left">
-            <div class="video-play-icon"><i class="fas fa-play"></i></div>
-            <div>
-              <strong>Tour de Instalaciones Profesionales</strong>
-              <span>Así es como operamos — organizado, limpio y con miles de piezas en stock</span>
+      <!-- Short Video Buttons Grid -->
+      <div class="shortvid-grid reveal">
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@miamiautopartsdep" target="_blank" rel="noopener noreferrer" class="shortvid-card tiktok-card">
+          <div class="shortvid-icon-wrap">
+            <svg class="shortvid-platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+            <div class="shortvid-play-pulse">
+              <i class="fas fa-play"></i>
             </div>
           </div>
-          <a href="https://wa.link/4526eu" target="_blank" rel="noopener noreferrer" class="video-wa-btn">
-            <i class="fab fa-whatsapp"></i>
-            ¿Tienes el repuesto que necesito?
-          </a>
-        </div>
+          <div class="shortvid-info">
+            <strong>TikTok</strong>
+            <span>@miamiautopartsdep</span>
+            <div class="shortvid-tag">Videos Cortos</div>
+          </div>
+          <div class="shortvid-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <!-- Instagram Reels -->
+        <a href="https://www.instagram.com/maautopartsdepot" target="_blank" rel="noopener noreferrer" class="shortvid-card instagram-card">
+          <div class="shortvid-icon-wrap">
+            <svg class="shortvid-platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <div class="shortvid-play-pulse">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="shortvid-info">
+            <strong>Instagram Reels</strong>
+            <span>@maautopartsdepot</span>
+            <div class="shortvid-tag">Reels</div>
+          </div>
+          <div class="shortvid-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <!-- Facebook Videos -->
+        <a href="https://www.facebook.com/profile.php?id=61586469360382" target="_blank" rel="noopener noreferrer" class="shortvid-card facebook-card">
+          <div class="shortvid-icon-wrap">
+            <svg class="shortvid-platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <div class="shortvid-play-pulse">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+          <div class="shortvid-info">
+            <strong>Facebook</strong>
+            <span>Miami Auto Parts Depot</span>
+            <div class="shortvid-tag">Videos</div>
+          </div>
+          <div class="shortvid-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+
       </div>
 
-      <!-- 3 feature highlights below video -->
-      <div class="video-features reveal">
-        <div class="video-feature-item">
-          <div class="video-feature-icon"><i class="fas fa-warehouse"></i></div>
-          <h4>Almacén Organizado</h4>
-          <p>Miles de piezas en estantes industriales, clasificadas por marca, modelo y año para encontrarlas al instante.</p>
+      <!-- Big WhatsApp CTA below -->
+      <div class="shortvid-cta reveal">
+        <div class="shortvid-cta-text">
+          <i class="fas fa-fire" style="color:var(--red);"></i>
+          <span>¿Viste algo que te interesa? <strong>¡Escríbenos ahora!</strong></span>
         </div>
-        <div class="video-feature-item">
-          <div class="video-feature-icon"><i class="fas fa-search"></i></div>
-          <h4>Inspección Detallada</h4>
-          <p>Cada motor y transmisión es inspeccionado y probado antes de la venta. Lo que ves es lo que recibes.</p>
-        </div>
-        <div class="video-feature-item">
-          <div class="video-feature-icon"><i class="fas fa-shipping-fast"></i></div>
-          <h4>Listo para Enviar</h4>
-          <p>Empacamos con cuidado y enviamos a Miami, toda Florida, República Dominicana, Costa Rica y más.</p>
-        </div>
-      </div>
-
-      <!-- CTA below video -->
-      <div style="text-align:center; margin-top:44px;">
         <a href="https://wa.link/4526eu" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" style="display:inline-flex;">
           <i class="fab fa-whatsapp"></i>
-          Consulta Disponibilidad Ahora
+          Consultar por WhatsApp
         </a>
       </div>
     </div>
